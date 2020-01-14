@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Vathanan/CLionProjects/AoW/Battlefield.h
+Elements.h
+C:/Users/Vathanan/CLionProjects/AoW/Elements.h
+
+C:/Users/Vathanan/CLionProjects/AoW/Elements.h
+string
+-
+
+C:/Users/Vathanan/CLionProjects/AoW/Fantassin.h
+Unit.h
+C:/Users/Vathanan/CLionProjects/AoW/Unit.h
+
+C:/Users/Vathanan/CLionProjects/AoW/Player.h
+
+C:/Users/Vathanan/CLionProjects/AoW/Unit.h
+Elements.h
+C:/Users/Vathanan/CLionProjects/AoW/Elements.h
+Player.h
+C:/Users/Vathanan/CLionProjects/AoW/Player.h
+Battlefield.h
+C:/Users/Vathanan/CLionProjects/AoW/Battlefield.h
+iostream
+-
+sstream
+-
+
+C:/Users/Vathanan/CLionProjects/AoW/main.cpp
+iostream
+-
+Player.h
+C:/Users/Vathanan/CLionProjects/AoW/Player.h
+Fantassin.h
+C:/Users/Vathanan/CLionProjects/AoW/Fantassin.h
+Battlefield.h
+C:/Users/Vathanan/CLionProjects/AoW/Battlefield.h
+

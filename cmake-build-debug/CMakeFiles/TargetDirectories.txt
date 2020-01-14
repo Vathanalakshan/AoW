@@ -1,0 +1,3 @@
+C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/CMakeFiles/AoW.dir
+C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/CMakeFiles/rebuild_cache.dir

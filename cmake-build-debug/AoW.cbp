@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="AoW"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="AoW">
+				<Option output="C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/AoW.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Mingw-w64/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Mingw-w64/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Mingw-w64/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Mingw-w64/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Mingw-w64/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Mingw-w64/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 AoW"/>
+					<CompileFile command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="AoW/fast">
+				<Option output="C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/AoW.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Mingw-w64/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Mingw-w64/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Mingw-w64/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Mingw-w64/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Mingw-w64/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Mingw-w64/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 AoW/fast"/>
+					<CompileFile command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Mingw-w64/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Vathanan/CLionProjects/AoW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Vathanan/CLionProjects/AoW/Archer.cpp">
+			<Option target="AoW"/>
+		</Unit>
+		<Unit filename="C:/Users/Vathanan/CLionProjects/AoW/Archer.h">
+			<Option target="AoW"/>
+		</Unit>
+		<Unit filename="C:/Users/Vathanan/CLionProjects/AoW/Battlefield.cpp">
+			<Option target="AoW"/>
+		</Unit>
+		<Unit filename="C:/Users/Vathanan/CLionProjects/AoW/Battlefield.h">
+			<Option target="AoW"/>
+		</Unit>
+		<Unit filename="C:/Users/Vathanan/CLionProjects/AoW/Catapulte.cpp">
+			<Option target="AoW"/>
+		</Unit>
+		<Unit filename="C:/Users/Vathanan/CLionProjects/AoW/Catapulte.h">
+			<Option target="AoW"/>
+		</Unit>
+		<Unit filename="C:/Users/Vathanan/CLionProjects/AoW/Elements.cpp">
+			<Option target="AoW"/>
+		</Unit>
+		<Unit filename="C:/Users/Vathanan/CLionProjects/AoW/Elements.h">
+			<Option target="AoW"/>
+		</Unit>
+		<Unit filename="C:/Users/Vathanan/CLionProjects/AoW/Fantassin.cpp">
+			<Option target="AoW"/>
+		</Unit>
+		<Unit filename="C:/Users/Vathanan/CLionProjects/AoW/Fantassin.h">
+			<Option target="AoW"/>
+		</Unit>
+		<Unit filename="C:/Users/Vathanan/CLionProjects/AoW/Fort.cpp">
+			<Option target="AoW"/>
+		</Unit>
+		<Unit filename="C:/Users/Vathanan/CLionProjects/AoW/Fort.h">
+			<Option target="AoW"/>
+		</Unit>
+		<Unit filename="C:/Users/Vathanan/CLionProjects/AoW/Player.cpp">
+			<Option target="AoW"/>
+		</Unit>
+		<Unit filename="C:/Users/Vathanan/CLionProjects/AoW/Player.h">
+			<Option target="AoW"/>
+		</Unit>
+		<Unit filename="C:/Users/Vathanan/CLionProjects/AoW/Unit.cpp">
+			<Option target="AoW"/>
+		</Unit>
+		<Unit filename="C:/Users/Vathanan/CLionProjects/AoW/Unit.h">
+			<Option target="AoW"/>
+		</Unit>
+		<Unit filename="C:/Users/Vathanan/CLionProjects/AoW/main.cpp">
+			<Option target="AoW"/>
+		</Unit>
+		<Unit filename="C:/Users/Vathanan/CLionProjects/AoW/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
