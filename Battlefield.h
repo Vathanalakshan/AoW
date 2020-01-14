@@ -9,10 +9,10 @@
 
 class Battlefield
 {
-private:
-    Elements* tab[12];
-    int Turn;
-    int maxTurns;
+protected:
+    Elements* tab[12]{};
+    int Turn{};
+    int maxTurns{};
 
 public:
     Battlefield(/* args */);

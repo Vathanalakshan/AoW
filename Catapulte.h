@@ -7,8 +7,8 @@
 
 #include "Unit.h"
 
-class Catapulte : public Unit{
-private:
+class Catapulte : protected Unit{
+protected:
     /* data */
 public:
     Catapulte(int price,int health,bool t,int p,int ad,int rangemin,int rangemax,Battlefield& bf,Player& P);

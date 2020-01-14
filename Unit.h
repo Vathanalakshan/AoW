@@ -11,7 +11,7 @@
 #include <sstream>
 
 class Unit :public Elements{
-public :
+protected :
     int m_price;
     int m_attackDmg;
     int m_rangeMin;
@@ -19,9 +19,7 @@ public :
     Battlefield* Plateau;
     Player* Joueur;
 
-
-
-public:
+protected:
 
     Unit(int price,int health,bool t,int p,int ad,int rangemin,int rangemax,Battlefield& bf,Player& P);
     int getPrice();

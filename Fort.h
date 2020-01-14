@@ -6,9 +6,9 @@
 #define AOW_FORT_H
 
 #include "Elements.h"
-class Fort : public Elements
+class Fort : protected Elements
 {
-private:
+protected:
     /* data */
 public:
     Fort(bool t);

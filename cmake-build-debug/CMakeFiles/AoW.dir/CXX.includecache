@@ -6,19 +6,47 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Vathanan/CLionProjects/AoW/Battlefield.cpp
+Battlefield.h
+C:/Users/Vathanan/CLionProjects/AoW/Battlefield.h
+
 C:/Users/Vathanan/CLionProjects/AoW/Battlefield.h
 Elements.h
 C:/Users/Vathanan/CLionProjects/AoW/Elements.h
+
+C:/Users/Vathanan/CLionProjects/AoW/Catapulte.cpp
+Catapulte.h
+C:/Users/Vathanan/CLionProjects/AoW/Catapulte.h
+
+C:/Users/Vathanan/CLionProjects/AoW/Catapulte.h
+Unit.h
+C:/Users/Vathanan/CLionProjects/AoW/Unit.h
 
 C:/Users/Vathanan/CLionProjects/AoW/Elements.h
 string
 -
 
+C:/Users/Vathanan/CLionProjects/AoW/Fantassin.cpp
+Fantassin.h
+C:/Users/Vathanan/CLionProjects/AoW/Fantassin.h
+
 C:/Users/Vathanan/CLionProjects/AoW/Fantassin.h
 Unit.h
 C:/Users/Vathanan/CLionProjects/AoW/Unit.h
 
+C:/Users/Vathanan/CLionProjects/AoW/Fort.cpp
+Fort.h
+C:/Users/Vathanan/CLionProjects/AoW/Fort.h
+
+C:/Users/Vathanan/CLionProjects/AoW/Fort.h
+Elements.h
+C:/Users/Vathanan/CLionProjects/AoW/Elements.h
+
 C:/Users/Vathanan/CLionProjects/AoW/Player.h
+
+C:/Users/Vathanan/CLionProjects/AoW/Unit.cpp
+Unit.h
+C:/Users/Vathanan/CLionProjects/AoW/Unit.h
 
 C:/Users/Vathanan/CLionProjects/AoW/Unit.h
 Elements.h

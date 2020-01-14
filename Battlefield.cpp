@@ -3,5 +3,5 @@
 //
 
 #include "Battlefield.h"
-Battlefield::Battlefield() {}
-Battlefield::~Battlefield() {}
+Battlefield::Battlefield() = default;
+Battlefield::~Battlefield() = default;
