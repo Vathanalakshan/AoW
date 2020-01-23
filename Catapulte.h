@@ -5,19 +5,22 @@
 #ifndef AOW_CATAPULTE_H
 #define AOW_CATAPULTE_H
 
+#include <ostream>
 #include "Unit.h"
 
-class Catapulte : protected Unit{
+class Catapulte : public Unit{
 protected:
     /* data */
 public:
-    Catapulte(int price,int health,bool t,int p,int ad,int rangemin,int rangemax,Battlefield& bf,Player& P);
-    ~Catapulte();
+    Catapulte(int pos,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, Player *joueur);
+
+    friend std::ostream &operator<<(std::ostream &os, const Catapulte &catapulte);
+
+    void action1() override;
+    void action2() override;
+    void action3() override;
+
 };
 
-
-Catapulte::~Catapulte()
-{
-}
 
 #endif //AOW_CATAPULTE_H

@@ -6,19 +6,28 @@
 #define AOW_BATTLEFIELD_H
 
 #include "Elements.h"
+#include <array>
+#include <ostream>
+#include "Fort.h"
+class Player;
 
 class Battlefield
 {
 protected:
-    Elements* tab[12]{};
-    int Turn{};
-    int maxTurns{};
-
+    std::array<Elements*,10> caseElements;
 public:
-    Battlefield(/* args */);
-    ~Battlefield();
+    Battlefield();
 
-};
+    void addUnit(int pos,Elements* e);
+    void removeUnit(int pos);
+    Elements* getElement(int pos);
+
+    friend std::ostream &operator<<(std::ostream &os, const Battlefield &battlefield);
+
+    void Generer(Player& P1,Player& P2);
+    void Printfile();
+
+    };
 
 
 

@@ -4,19 +4,20 @@
 
 #include "Catapulte.h"
 
-Catapulte::Catapulte(int price,int health,bool t,int p,int ad,int rangemin,int rangemax,Battlefield& bf,Player& P):Unit(price,health,t,p,ad,rangemin,rangemax,bf,P)
-{
-}
+Catapulte::Catapulte(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, Player *joueur)
+        : Unit(p,hp, price, attackDmg, rangeMin, rangeMax, plateau, joueur) {}
 
-
-void action1()
-{
+std::ostream &operator<<(std::ostream &os, const Catapulte &catapulte) {
+    os << static_cast<const Unit &>(catapulte);
+    return os;
 }
+void Catapulte::action1(){
+    std::cout<< "1 " << std::endl;
+};
+void Catapulte::action2(){
+    std::cout<< "1 " << std::endl;
 
-void action2()
-{
-}
-
-void action3()
-{
-}
+};
+void Catapulte::action3(){
+    std::cout<< "1 " << std::endl;
+};

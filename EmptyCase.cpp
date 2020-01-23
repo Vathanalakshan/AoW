@@ -1,5 +1,8 @@
 //
-// Created by Vathanan on 14/01/2020.
+// Created by Vathanan on 23/01/2020.
 //
 
 #include "EmptyCase.h"
+
+EmptyCase::EmptyCase(int i):Elements(i){}
+

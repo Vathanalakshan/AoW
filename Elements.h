@@ -6,23 +6,20 @@
 #define AOW_ELEMENTS_H
 
 #include <string>
+#include <iostream>
 class Elements
 {
 protected:
-    int m_pos;//Ses position
-    bool m_team;//L'equipe
-    int m_currentHealth;
+    int pos;//Ses position
+
 
 
 public:
-    Elements(){};
-    ~Elements();
-
     int getPos() const;
-    bool getTeam() const;
-    int getCurrentHealth() const;
-    virtual void toString() =0;//Rendre abstact la classe
 
+    Elements(int pos);
+
+    friend std::ostream &operator<<(std::ostream &os, const Elements &elements);
 };
 
 #endif //AOW_ELEMENTS_H

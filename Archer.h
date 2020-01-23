@@ -2,25 +2,23 @@
 // Created by Vathanan on 14/01/2020.
 //
 
-#include "Unit.h"
 
 #ifndef AOW_ARCHER_H
 #define AOW_ARCHER_H
 
+#include <ostream>
+#include "Unit.h"
+
 class Archer : public Unit{
 
 public:
+    Archer(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, Player *joueur);
 
-    Archer(int price,int health,bool t,int p,int ad,int rangemin,int rangemax,Battlefield& bf,Player& P);
-    ~Archer();
+    friend std::ostream &operator<<(std::ostream &os, const Archer &archer);
 
-    void Action();
-
-    void attack();
-
-    void action1();
-    void action2();
-    void action3();
+    void action1() override;
+    void action2() override;
+    void action3() override;
 
 
 };

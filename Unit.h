@@ -12,39 +12,48 @@
 
 class Unit :public Elements{
 protected :
-    int m_price;
-    int m_attackDmg;
-    int m_rangeMin;
-    int m_rangeMax;
+    int hp;
+    int price;
+    int attackDmg;
+    int rangeMin;
+    int rangeMax;
     Battlefield* Plateau;
     Player* Joueur;
 
-protected:
+public:
+    Unit(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, Player *joueur);
 
-    Unit(int price,int health,bool t,int p,int ad,int rangemin,int rangemax,Battlefield& bf,Player& P);
-    int getPrice();
+    int getHp() const;
 
-    int getAttackDmg() const;
-
-    int getRangeMax() const;
-
-    int getRangeMin() const;
+    void setHp(int hp);
 
     int getPrice() const;
 
-    void Move();
-    void Attack();
+    void setPrice(int price);
+
+    int getAttackDmg() const;
+
+    void setAttackDmg(int attackDmg);
+
+    int getRangeMin() const;
+
+    void setRangeMin(int rangeMin);
+
+    int getRangeMax() const;
+
+    void setRangeMax(int rangeMax);
+
+    Battlefield *getPlateau() const;
+
+    void setPlateau(Battlefield *plateau);
+
+    Player *getJoueur() const;
+
+    void setJoueur(Player *joueur);
 
     virtual void action1() = 0;//Forcer les classe filles a les definir + transformation en class abstraites
     virtual void action2() = 0;
     virtual void action3() = 0;
-
-    void toString();
-
-    void SuperSaiyan();//Promote
-
-
-    ~Unit();
 
 };
 

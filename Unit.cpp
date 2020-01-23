@@ -3,55 +3,71 @@
 //
 #include "Unit.h"
 
-Unit::Unit(int price,int health,bool t,int p,int ad,int rangemin,int rangemax,Battlefield& bf,Player& P)
-{
-    m_price=price;
-    m_currentHealth=health;
-    m_team=t;
-    m_pos=p;
-    m_attackDmg=ad;
-    m_rangeMax=rangemax;
-    m_rangeMin=rangemin;
-    Plateau=&bf;
-    Joueur=&P;
+Unit::Unit(int p,int health, int prix, int ad, int rMin, int rMax, Battlefield *bf, Player *j) : Elements(p) {
+    hp=health;
+    price=prix;
+    attackDmg=ad;
+    rangeMin=rMin;
+    rangeMax=rMax;
+    Plateau=bf;
+    Joueur=j;
 }
 
-int Unit::getPrice() const{
-    return m_price;
+int Unit::getHp() const {
+    return hp;
 }
 
-void Unit::Move()
-{
+void Unit::setHp(int i) {
+    Unit::hp = i;
 }
 
-void Unit::Attack()
-{
+int Unit::getPrice() const {
+    return price;
 }
 
-void Unit::toString(){
-    std::cout << m_price;
-    std::cout << "Hello world!" << std::endl;
-
+void Unit::setPrice(int i) {
+    Unit::price = i;
 }
 
-void Unit::SuperSaiyan()
-{
+int Unit::getAttackDmg() const {
+    return attackDmg;
 }
 
-Unit::~Unit()
-{
+void Unit::setAttackDmg(int i) {
+    Unit::attackDmg = i;
 }
 
-int Unit::getAttackDmg() const{
-    return m_attackDmg;
-
+int Unit::getRangeMin() const {
+    return rangeMin;
 }
 
-int Unit::getRangeMax() const{
-    return m_rangeMax;
+void Unit::setRangeMin(int i) {
+    Unit::rangeMin = i;
 }
 
-int Unit::getRangeMin() const{
-    return m_rangeMin;
+int Unit::getRangeMax() const {
+    return rangeMax;
 }
+
+void Unit::setRangeMax(int i) {
+    Unit::rangeMax = i;
+}
+
+Battlefield *Unit::getPlateau() const {
+    return Plateau;
+}
+
+void Unit::setPlateau(Battlefield *plateau) {
+    Plateau = plateau;
+}
+
+Player *Unit::getJoueur() const {
+    return Joueur;
+}
+
+void Unit::setJoueur(Player *joueur) {
+    Joueur = joueur;
+}
+
+
 

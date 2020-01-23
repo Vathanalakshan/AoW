@@ -3,19 +3,20 @@
 //
 #include "Fantassin.h"
 
-Fantassin::Fantassin(int price,int health,bool t,int p,int ad,int rangemin,int rangemax,Battlefield& bf,Player& P):Unit(price,health,t,p,ad,rangemin,rangemax,bf,P)
+Fantassin::Fantassin(int pos,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, Player *joueur)
+        : Unit(pos,hp, price, attackDmg, rangeMin, rangeMax, plateau, joueur) {}
 
-{
-
+std::ostream &operator<<(std::ostream &os, const Fantassin &fantassin) {
+    os << "Haha";
+    return os;
 }
-Fantassin::~Fantassin() {};
-
 void Fantassin::action1(){
-
-};//Forcer les classe filles a les definir + transformation en class abstraites
+std::cout<< "1 " << std::endl;
+};
 void Fantassin::action2(){
+std::cout<< "1 " << std::endl;
 
 };
 void Fantassin::action3(){
-
+std::cout<< "1 " << std::endl;
 };

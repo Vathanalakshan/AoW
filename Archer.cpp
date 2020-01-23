@@ -3,25 +3,22 @@
 //
 
 #include "Archer.h"
-Archer::Archer(int price,int health,bool t,int p,int ad,int rangemin,int rangemax,Battlefield& bf,Player& P):Unit(price,health,t,p,ad,rangemin,rangemax,bf,P)
+Archer::Archer(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, Player *joueur)
+        : Unit(p,hp, price, attackDmg, rangeMin, rangeMax, plateau, joueur) {}
 
-{
-
+std::ostream &operator<<(std::ostream &os, const Archer &archer) {
+    os << static_cast<const Unit &>(archer);
+    return os;
 }
-Archer::~Archer() = default;;
+
 
 void Archer::action1(){
-
-};//Forcer les classe filles a les definir + transformation en class abstraites
+    std::cout<< "1 " << std::endl;
+};
 void Archer::action2(){
+    std::cout<< "1 " << std::endl;
 
 };
 void Archer::action3(){
-
-}
-
-void Archer::attack() {
-
+    std::cout<< "1 " << std::endl;
 };
-
-

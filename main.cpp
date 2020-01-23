@@ -5,9 +5,9 @@
 int main() {
     std::cout << "Hello, World!" << std::endl;
     Battlefield b;
-    Player P;
-    Fantassin f1(52,5,true,6,2,4,5,b,P);
-    std::cout << f1.getPos() << std::endl;
+    Player P,Q;
+    b.Generer(P,Q);
+    b.Printfile();
 
     return 0;
 }

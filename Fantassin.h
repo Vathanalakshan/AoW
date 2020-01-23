@@ -4,23 +4,21 @@
 
 #ifndef AOW_FANTASSIN_H
 #define AOW_FANTASSIN_H
+
+#include <ostream>
 #include "Unit.h"
 
 class Fantassin : public Unit{
 
 public:
+    Fantassin(int pos,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, Player *joueur);
 
-    Fantassin(int price,int health,bool t,int p,int ad,int rangemin,int rangemax,Battlefield& bf,Player& P);
-    ~Fantassin();
+    friend std::ostream &operator<<(std::ostream &os, const Fantassin &fantassin);
 
-    void Action();
 
-    void attack();
-
-    void action1();
-    void action2();
-    void action3();
-
+    void action1() override;
+    void action2() override;
+    void action3() override;
 
 };
 

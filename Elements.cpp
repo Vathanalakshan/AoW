@@ -5,14 +5,12 @@
 #include "Elements.h"
 
 int  Elements::getPos() const{
-    return m_pos;
-};
-bool Elements::getTeam() const{
-    return m_team;
-};
-
-int Elements::getCurrentHealth() const{
-    return m_currentHealth;
+    return pos;
 }
 
-Elements::~Elements() {};
+std::ostream &operator<<(std::ostream &os, const Elements &elements) {
+    os << "pos: " << elements.pos;
+    return os;
+}
+
+Elements::Elements(int pos) : pos(pos) {};

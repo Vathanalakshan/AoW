@@ -1,18 +1,27 @@
 //
 // Created by Vathanan on 14/01/2020.
 //
-
 #ifndef AOW_FORT_H
 #define AOW_FORT_H
 
+#include <ostream>
 #include "Elements.h"
-class Fort : protected Elements
+
+class Battlefield;
+class Player;
+
+
+class Fort : public Elements
 {
 protected:
-    /* data */
+    int hp;
+    Battlefield* Plateau;
+    Player* Joueur;
 public:
-    Fort(bool t);
-    ~Fort();
+
+    Fort(int pos,int hp, Battlefield *plateau, Player *joueur);
+
+    friend std::ostream &operator<<(std::ostream &os, const Fort &fort);
 };
 
 #endif //AOW_FORT_H
