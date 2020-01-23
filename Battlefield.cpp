@@ -12,6 +12,7 @@ void Battlefield::addUnit(int pos, Elements *e) {
         caseElements[pos]=e;
     } else{
         std::cout << "Erreur d'ajout" << std::endl;
+        std::cout << caseElements[pos]<<std::endl;
     }
 }
 
@@ -32,13 +33,12 @@ void Battlefield::Generer(Player& P1,Player& P2){
     Fort f2(11,100,this,&P1);
     this->addUnit(0,&f1);
     this->addUnit(11,&f2);
-
 }
 
 void Battlefield::Printfile() {
     for (int i =0 ; i < sizeof(caseElements); i++)
         if (caseElements[i] == nullptr)
-            std::cout << "Yay";
+            std::cout << caseElements[i];
 }
 
 
