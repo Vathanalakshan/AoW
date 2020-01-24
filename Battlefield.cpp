@@ -3,42 +3,29 @@
 //
 
 #include "Battlefield.h"
+#include "Fantassin.h"
 
-Battlefield::Battlefield(){
-}
-
-void Battlefield::addUnit(int pos, Elements *e) {
-    if(caseElements[pos] == nullptr){
-        caseElements[pos]=e;
-    } else{
-        std::cout << "Erreur d'ajout" << std::endl;
-        std::cout << caseElements[pos]<<std::endl;
+Battlefield::Battlefield() {
+    for (int i=0;i<12;i++){
+        caseElements[i]=Case();
     }
 }
 
-void Battlefield::removeUnit(int pos) {
-    if(caseElements[pos] != nullptr){
-        caseElements[pos]=nullptr;
-    } else{
-        std::cout << "Erreur d'ajout" << std::endl;
+void Battlefield::Generer(Player *p) {
+    Fort *f1=new Fort(0,100,this,true);
+    Fort *f2=new Fort(11,100,this,true);
+
+    caseElements[0].setF(f1);
+    caseElements[0].setEdgeCase(true);
+    caseElements[11].setF(f2);
+    caseElements[11].setEdgeCase(true);
+    Fantassin *fan=new Fantassin(1,10,100,1,5,12,this,p);
+    caseElements[1].addUnit(fan);
+}
+
+std::ostream &operator<<(std::ostream &os, const Battlefield &battlefield) {
+    for(const Case &t:battlefield.caseElements){
+        os << t << std::endl;
     }
+    return os;
 }
-
-Elements *Battlefield::getElement(int pos) {
-    return caseElements[pos];
-}
-
-void Battlefield::Generer(Player& P1,Player& P2){
-    Fort f1(0,100,this,&P2);
-    Fort f2(11,100,this,&P1);
-    this->addUnit(0,&f1);
-    this->addUnit(11,&f2);
-}
-
-void Battlefield::Printfile() {
-    for (int i =0 ; i < sizeof(caseElements); i++)
-        if (caseElements[i] == nullptr)
-            std::cout << caseElements[i];
-}
-
-

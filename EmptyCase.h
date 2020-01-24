@@ -4,9 +4,9 @@
 
 #ifndef AOW_EMPTYCASE_H
 #define AOW_EMPTYCASE_H
-#include "Elements.h"
+#include "Unit.h"
 
-class EmptyCase: public Elements {
+class EmptyCase: public Unit {
 
 public:
     EmptyCase(int i);

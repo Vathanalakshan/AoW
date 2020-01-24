@@ -4,24 +4,26 @@
 
 #ifndef AOW_UNIT_H
 #define AOW_UNIT_H
-#include "Elements.h"
 #include "Player.h"
 #include "Battlefield.h"
 #include <iostream>
 #include <sstream>
 
-class Unit :public Elements{
+class Unit{
 protected :
+    int pos;
     int hp;
     int price;
     int attackDmg;
     int rangeMin;
     int rangeMax;
-    Battlefield* Plateau;
-    Player* Joueur;
+    Battlefield* plateau;
+    bool team;
 
 public:
-    Unit(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, Player *joueur);
+    Unit(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool team);
+
+    Unit(int p);
 
     int getHp() const;
 
@@ -47,14 +49,17 @@ public:
 
     void setPlateau(Battlefield *plateau);
 
-    Player *getJoueur() const;
+    int getPos() const;
 
-    void setJoueur(Player *joueur);
+    void setPos(int pos);
+
+    bool isTeam() const;
+
+    void setTeam(bool team);
 
     virtual void action1() = 0;//Forcer les classe filles a les definir + transformation en class abstraites
     virtual void action2() = 0;
     virtual void action3() = 0;
-
 };
 
 

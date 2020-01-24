@@ -3,14 +3,19 @@
 //
 #include "Unit.h"
 
-Unit::Unit(int p,int health, int prix, int ad, int rMin, int rMax, Battlefield *bf, Player *j) : Elements(p) {
+Unit::Unit(int p,int health, int prix, int ad, int rMin, int rMax, Battlefield *bf,bool t) {
+    pos=p;
     hp=health;
     price=prix;
     attackDmg=ad;
     rangeMin=rMin;
     rangeMax=rMax;
-    Plateau=bf;
-    Joueur=j;
+    plateau=bf;
+    team=t;
+}
+
+Unit::Unit(int p) {
+    pos=p;
 }
 
 int Unit::getHp() const {
@@ -54,19 +59,27 @@ void Unit::setRangeMax(int i) {
 }
 
 Battlefield *Unit::getPlateau() const {
-    return Plateau;
+    return plateau;
 }
 
 void Unit::setPlateau(Battlefield *plateau) {
-    Plateau = plateau;
+    plateau = plateau;
 }
 
-Player *Unit::getJoueur() const {
-    return Joueur;
+int Unit::getPos() const {
+    return pos;
 }
 
-void Unit::setJoueur(Player *joueur) {
-    Joueur = joueur;
+void Unit::setPos(int i) {
+    Unit::pos = i;
+}
+
+bool Unit::isTeam() const {
+    return team;
+}
+
+void Unit::setTeam(bool i) {
+    Unit::team = i;
 }
 
 

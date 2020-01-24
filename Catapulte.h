@@ -10,11 +10,10 @@
 
 class Catapulte : public Unit{
 protected:
-    /* data */
+
 public:
     Catapulte(int pos,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, Player *joueur);
 
-    friend std::ostream &operator<<(std::ostream &os, const Catapulte &catapulte);
 
     void action1() override;
     void action2() override;

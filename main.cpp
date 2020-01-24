@@ -5,9 +5,8 @@
 int main() {
     std::cout << "Hello, World!" << std::endl;
     Battlefield b;
-    Player P,Q;
-    b.Generer(P,Q);
-    b.Printfile();
-
+    Player p;
+    b.Generer(&p);
+    std::cout<<b;
     return 0;
 }

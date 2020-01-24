@@ -6,11 +6,6 @@
 Archer::Archer(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, Player *joueur)
         : Unit(p,hp, price, attackDmg, rangeMin, rangeMax, plateau, joueur) {}
 
-std::ostream &operator<<(std::ostream &os, const Archer &archer) {
-    os << static_cast<const Unit &>(archer);
-    return os;
-}
-
 
 void Archer::action1(){
     std::cout<< "1 " << std::endl;

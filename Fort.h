@@ -5,23 +5,33 @@
 #define AOW_FORT_H
 
 #include <ostream>
-#include "Elements.h"
 
 class Battlefield;
 class Player;
 
 
-class Fort : public Elements
-{
+class Fort{
 protected:
     int hp;
     Battlefield* Plateau;
-    Player* Joueur;
+    bool team;
 public:
 
-    Fort(int pos,int hp, Battlefield *plateau, Player *joueur);
+    Fort(int pos,int hp, Battlefield *plateau, bool team);
 
     friend std::ostream &operator<<(std::ostream &os, const Fort &fort);
+
+    int getHp() const;
+
+    void setHp(int hp);
+
+    Battlefield *getPlateau() const;
+
+    void setPlateau(Battlefield *plateau);
+
+    bool isTeam() const;
+
+    void setTeam(bool team);
 };
 
 #endif //AOW_FORT_H

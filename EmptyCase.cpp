@@ -4,5 +4,6 @@
 
 #include "EmptyCase.h"
 
-EmptyCase::EmptyCase(int i):Elements(i){}
+EmptyCase::EmptyCase(int i):Unit(i){
+}
 

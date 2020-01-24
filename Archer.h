@@ -14,7 +14,6 @@ class Archer : public Unit{
 public:
     Archer(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, Player *joueur);
 
-    friend std::ostream &operator<<(std::ostream &os, const Archer &archer);
 
     void action1() override;
     void action2() override;
