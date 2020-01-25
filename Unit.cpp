@@ -78,8 +78,76 @@ bool Unit::isTeam() const {
     return team;
 }
 
+bool Unit::sameTeam(Unit *u) {
+    return(this->isTeam()==u->isTeam());
+}
+
 void Unit::setTeam(bool i) {
     Unit::team = i;
+}
+
+bool Unit::doDmg(Unit *u, int i) {
+    u->takeDmg(i);
+    action1=true;
+    if (u->isDead()){
+        return true;
+    }
+}
+
+void Unit::takeDmg(int i) {
+    this->setHp(this->hp-i);
+
+}
+
+bool Unit::isDead() {
+    if (hp<=0) {
+        this->~Unit();
+        return true;
+    }
+}
+
+void Unit::doDmg(Fort *f, int i) {
+    f->takeDmg(i);
+    action1=true;
+    if(f->isDead()){
+        plateau->win(this->isTeam());
+
+    }
+
+
+}
+
+void Unit::attack(int position) {
+    Case c=plateau->getCase(position);
+    Unit *u=c.getE();
+    if (c.getE() == nullptr ){
+        if(c.getF() != nullptr){
+            doDmg(c.getF(), attackDmg);
+        }
+    }
+    else{
+        if(sameTeam(u))
+            {}
+        else{doDmg(u, attackDmg);}
+    }
+
+}
+
+void Unit::move(int position) {
+    Case c=plateau->getCase(position);
+    if (c.getE() == nullptr ){
+        if(c.getF() == nullptr){
+            plateau->moveUnit(pos,position);
+        }
+    }
+}
+
+int Unit::getact() const {
+    return action1;
+}
+
+void Unit::setact(bool act) {
+    this->action1=act;
 }
 
 

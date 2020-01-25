@@ -19,6 +19,7 @@ protected :
     int rangeMax;
     Battlefield* plateau;
     bool team;
+    bool action1=false;
 
 public:
     Unit(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool team);
@@ -28,6 +29,10 @@ public:
     int getHp() const;
 
     void setHp(int hp);
+
+    int getact() const;
+
+    void setact(bool act);
 
     int getPrice() const;
 
@@ -55,7 +60,21 @@ public:
 
     bool isTeam() const;
 
+    bool sameTeam(Unit *u);
+
     void setTeam(bool team);
+
+    bool doDmg(Unit *u, int i);
+
+    void doDmg(Fort *f, int i);
+
+    void attack(int position);
+
+    void move(int position);
+
+    void takeDmg(int i);
+
+    bool isDead();
 
     virtual void action1() = 0;//Forcer les classe filles a les definir + transformation en class abstraites
     virtual void action2() = 0;
