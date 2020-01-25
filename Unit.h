@@ -20,6 +20,9 @@ protected :
     Battlefield* plateau;
     bool team;
     bool act=false;
+    std::string nom;
+    static int i;
+    int id;
 
 public:
     Unit(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool team);
@@ -64,7 +67,7 @@ public:
 
     void setTeam(bool team);
 
-    bool doDmg(Unit *u, int i);
+    void doDmg(Unit *u, int i);
 
     void doDmg(Fort *f, int i);
 
@@ -76,9 +79,13 @@ public:
 
     bool isDead();
 
+    static void setI(int j);
+
     virtual void action1() = 0;//Forcer les classe filles a les definir + transformation en class abstraites
     virtual void action2() = 0;
     virtual void action3() = 0;
+
+    virtual void promote() = 0;
 };
 
 

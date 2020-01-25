@@ -86,11 +86,11 @@ void Unit::setTeam(bool i) {
     Unit::team = i;
 }
 
-bool Unit::doDmg(Unit *u, int i) {
+void Unit::doDmg(Unit *u, int i) {
     u->takeDmg(i);
     act=true;
     if (u->isDead()){
-        return true;
+        this->promote();
     }
 }
 
@@ -109,7 +109,7 @@ bool Unit::isDead() {
 void Unit::doDmg(Fort *f, int i) {
     f->takeDmg(i);
     act=true;
-
+    std::cout<<nom<<" a attaqué "<<f->getNom()<<" et a infligé"<<i<<" points de dégats";
 
 
 }
@@ -146,6 +146,14 @@ int Unit::getact() const {
 void Unit::setact(bool act) {
     this->act=act;
 }
+
+void Unit::setI(int j) {
+    i=j;
+}
+
+int Unit::i=0;
+
+
 
 
 

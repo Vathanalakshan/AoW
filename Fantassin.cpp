@@ -5,7 +5,18 @@
 
 
 Fantassin::Fantassin(int pos,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, Player *joueur)
-        : Unit(pos,hp, price, attackDmg, rangeMin, rangeMax, plateau, joueur) {}
+        : Unit(pos,hp, price, attackDmg, rangeMin, rangeMax, plateau, joueur) {
+    id=i;
+    i=i++;
+    if(team){
+        nom="Fantassin "+id;
+        nom=nom+" bleu";
+    }
+    else{
+        nom="Fantassin "+id;
+        nom=nom+" rouge";
+    }
+}
 
 std::ostream &operator<<(std::ostream &os, const Fantassin &fantassin) {
     os << "Haha";
@@ -23,6 +34,7 @@ void Fantassin::action1(){
 
 std::cout<< "1 " << std::endl;
 };
+
 void Fantassin::action2(){
     if (isTeam()){
         move(pos+1);
@@ -31,8 +43,8 @@ void Fantassin::action2(){
         move(pos-1);
     }
 std::cout<< "1 " << std::endl;
-
 };
+
 void Fantassin::action3(){
     if(getact()){
         if (superSoldat){
@@ -42,4 +54,9 @@ void Fantassin::action3(){
     else{action1();}
     setact(false);
 std::cout<< "1 " << std::endl;
+}
+
+void Fantassin::promote() {
+    superSoldat=true;
+
 };

@@ -16,6 +16,8 @@ protected:
     int hp;
     Battlefield* Plateau;
     bool team;
+    std::string nom;
+
 public:
 
     Fort(int pos, Battlefield *plateau, bool team);
@@ -39,6 +41,8 @@ public:
     void setTeam(bool team);
 
     void takeDmg(int i);
+
+    std::string getNom();
 };
 
 #endif //AOW_FORT_H

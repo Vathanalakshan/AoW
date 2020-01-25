@@ -7,6 +7,12 @@ Fort::Fort(int pos, Battlefield *bf, bool b) {
     Plateau=bf;
     team=b;
     gold=0;
+    if(b){
+        nom="Fort rouge";
+    }
+    else{
+        nom="Fort bleu";
+    }
 }
 
 int Fort::getHp() const {
@@ -49,5 +55,9 @@ void Fort::setGold(int i) {
 void Fort::takeDmg(int i) {
     setHp(hp-i);
 
+}
+
+std::string Fort::getNom() {
+    return nom;
 }
 
