@@ -5,20 +5,20 @@
 #include "Archer.h"
 Archer::Archer(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool t)
         : Unit(p,hp, price, attackDmg, rangeMin, rangeMax, plateau, t) {
-    id = i;
-    i = i++;
-    if (team) {
-        nom = "Archer " + id;
-        nom = nom + " bleu";
-    } else {
-        nom = "Archer " + id;
-        nom = nom + " rouge";
+    id++;
+    if(team){
+        nom="Archer "+std::to_string(id);
+        nom=nom+" bleu";
+    }
+    else{
+        nom="Archer "+std::to_string(id);
+        nom=nom+" rouge";
     }
 
 }
 
 void Archer::action1(){
-    for (i=rangeMin; i<rangeMax+1;i++){
+    for (int i=rangeMin; i<rangeMax+1;i++){
         if (!act) {
             if (isTeam()) {
                 attack(pos + i);

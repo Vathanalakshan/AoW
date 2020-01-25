@@ -6,21 +6,20 @@
 
 Catapulte::Catapulte(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool t)
         : Unit(p,hp, price, attackDmg, rangeMin, rangeMax, plateau, t) {
-    id=i;
-    i=i++;
+    id++;
     if(team){
-        nom="Catapulte "+id;
+        nom="Catapulte "+std::to_string(id);
         nom=nom+" bleu";
     }
-    else {
-        nom = "Catapulte " + id;
-        nom = nom + " rouge";
+    else{
+        nom="Catapulte "+std::to_string(id);
+        nom=nom+" rouge";
     }
 }
 
 
 void Catapulte::action1(){
-    for (i=rangeMin; i<rangeMax;i++){
+    for (int i=rangeMin; i<rangeMax;i++){
         if (!act) {
             if (isTeam()) {
                 attack(pos + i);

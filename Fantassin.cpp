@@ -4,16 +4,15 @@
 #include "Fantassin.h"
 
 
-Fantassin::Fantassin(int pos,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, Player *joueur)
-        : Unit(pos,hp, price, attackDmg, rangeMin, rangeMax, plateau, joueur) {
-    id=i;
-    i=i++;
+Fantassin::Fantassin(int pos,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool t)
+        : Unit(pos,hp, price, attackDmg, rangeMin, rangeMax, plateau, t) {
+    id++;
     if(team){
-        nom="Fantassin "+id;
+        nom="Fantassin "+std::to_string(id);
         nom=nom+" bleu";
     }
     else{
-        nom="Fantassin "+id;
+        nom="Fantassin "+std::to_string(id);
         nom=nom+" rouge";
     }
 }

@@ -20,12 +20,15 @@ protected:
 public:
     Battlefield();
 
+    virtual ~Battlefield();
+
     friend std::ostream &operator<<(std::ostream &os, const Battlefield &battlefield);
 
     void Generer(Fort* f1,Fort* f2);
     void addUnit(Unit *u,int pos);
     void removeUnit(int pos);
     void moveUnit(int pos1, int pos2);
+    bool getTeam(int i);
 
     bool checkCase(int pos);
 

@@ -38,6 +38,14 @@ int Unit::getAttackDmg() const {
     return attackDmg;
 }
 
+const std::string &Unit::getNom() const {
+    return nom;
+}
+
+void Unit::setNom(const std::string &nom) {
+    Unit::nom = nom;
+}
+
 void Unit::setAttackDmg(int i) {
     Unit::attackDmg = i;
 }
@@ -148,10 +156,10 @@ void Unit::setact(bool act) {
 }
 
 void Unit::setI(int j) {
-    i=j;
+    id=j;
 }
 
-int Unit::i=0;
+int Unit::id=0;
 
 
 

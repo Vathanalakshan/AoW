@@ -2,6 +2,7 @@
 // Created by Vathanan on 24/01/2020.
 //
 
+#include <iostream>
 #include "Case.h"
 
 Unit *Case::getE() const {
@@ -49,4 +50,5 @@ bool Case::checkFree() const {
 void Case::addUnit(Unit *e) {
     u=e;
 }
+
 

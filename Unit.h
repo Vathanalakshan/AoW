@@ -21,8 +21,7 @@ protected :
     bool team;
     bool act=false;
     std::string nom;
-    static int i;
-    int id;
+    static int id;
 
 public:
     Unit(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool team);
@@ -79,13 +78,17 @@ public:
 
     bool isDead();
 
-    static void setI(int j);
-
     virtual void action1() = 0;//Forcer les classe filles a les definir + transformation en class abstraites
     virtual void action2() = 0;
     virtual void action3() = 0;
 
     virtual void promote() = 0;
+
+    void setI(int j);
+
+    const std::string &getNom() const;
+
+    void setNom(const std::string &nom);
 };
 
 

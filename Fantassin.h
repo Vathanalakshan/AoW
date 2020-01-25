@@ -14,7 +14,7 @@ private:
     bool superSoldat=false;
 
 public:
-    Fantassin(int pos,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, Player *joueur);
+    Fantassin(int pos,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool t);
 
     friend std::ostream &operator<<(std::ostream &os, const Fantassin &fantassin);
 

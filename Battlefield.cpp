@@ -25,17 +25,18 @@ std::ostream &operator<<(std::ostream &os, const Battlefield &battlefield) {
         if (t.checkFree())
             os << "|   |";
         else
-            os <<"|"<<t.getE() <<"|";
+            os <<"|"<<t.getE()->getNom() <<"|";
     }
     return os << "|" <<std::endl;
 
 }
 
 void Battlefield::addUnit(Unit *u, int pos) {
-    if(caseElements[pos].checkFree())
+    if (caseElements[pos].checkFree())
         caseElements[pos].addUnit(u);
-    else
+    else {
         std::cout << "Case Pas Disponible";
+    }
 }
 
 void Battlefield::removeUnit(int pos) {
@@ -61,4 +62,14 @@ bool Battlefield::checkCase(int pos) {
 
 Case Battlefield::getCase(int pos){
     return caseElements[pos];
+}
+
+Battlefield::~Battlefield() {
+    for (int i = 0; i < 12; ++i) {
+    }
+    std::cout << "Destruction de plateau";
+}
+
+bool Battlefield::getTeam(int i) {
+    return caseElements[i].getE()->isTeam();
 }
