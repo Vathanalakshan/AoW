@@ -55,3 +55,7 @@ void Battlefield::moveUnit(int pos1,int pos2){
 bool Battlefield::checkCase(int pos) {
     return caseElements[pos].checkFree();
 }
+
+Case Battlefield::getCase(int pos){
+    return caseElements[pos];
+}

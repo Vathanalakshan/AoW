@@ -12,7 +12,7 @@
 class Archer : public Unit{
 
 public:
-    Archer(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, Player *joueur);
+    Archer(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool t);
 
 
     void action1() override;

@@ -62,8 +62,8 @@ Battlefield *Unit::getPlateau() const {
     return plateau;
 }
 
-void Unit::setPlateau(Battlefield *plateau) {
-    plateau = plateau;
+void Unit::setPlateau(Battlefield *i) {
+    plateau = i;
 }
 
 int Unit::getPos() const {

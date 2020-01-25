@@ -3,8 +3,8 @@
 //
 
 #include "Archer.h"
-Archer::Archer(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, Player *joueur)
-        : Unit(p,hp, price, attackDmg, rangeMin, rangeMax, plateau, joueur) {}
+Archer::Archer(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool t)
+        : Unit(p,hp, price, attackDmg, rangeMin, rangeMax, plateau, t) {}
 
 
 void Archer::action1(){

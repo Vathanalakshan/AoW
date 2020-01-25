@@ -29,6 +29,7 @@ public:
 
     bool checkCase(int pos);
 
+    Case getCase(int pos);
 };
 
 
