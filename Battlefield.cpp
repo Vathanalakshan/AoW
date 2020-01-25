@@ -25,10 +25,12 @@ std::ostream &operator<<(std::ostream &os, const Battlefield &battlefield) {
         if (t.checkFree())
             os << "|   |";
         else
-            os <<"|"<<t.getE()->getNom() <<"|";
+            if(t.getE()->isTeam())
+                os <<"|"<< blue <<t.getE()->print()<< white <<"|";
+            else
+                os <<"|"<< red <<t.getE()->print()<< white <<"|";
     }
     return os << "|" <<std::endl;
-
 }
 
 void Battlefield::addUnit(Unit *u, int pos) {
@@ -45,10 +47,11 @@ void Battlefield::removeUnit(int pos) {
     else{
         delete caseElements[pos].getE();
         caseElements[pos].setE(nullptr);
-}}
+    }
+}
 
 void Battlefield::moveUnit(int pos1,int pos2){
-    if(caseElements[pos2].checkFree() & !caseElements[pos1].checkFree()){
+    if(caseElements[pos2].checkFree()){
         caseElements[pos2].setE(caseElements[pos1].getE());
         caseElements[pos1].setE(nullptr);}
     else

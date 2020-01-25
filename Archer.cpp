@@ -6,14 +6,7 @@
 Archer::Archer(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool t)
         : Unit(p,hp, price, attackDmg, rangeMin, rangeMax, plateau, t) {
     id++;
-    if(team){
-        nom="Archer "+std::to_string(id);
-        nom=nom+" bleu";
-    }
-    else{
-        nom="Archer "+std::to_string(id);
-        nom=nom+" rouge";
-    }
+    nom = "Arc-" + std::to_string(id);
 
 }
 
@@ -42,4 +35,14 @@ void Archer::action2(){
 };
 void Archer::action3(){
     std::cout<< "1 " << std::endl;
-};
+}
+
+void Archer::promote() {
+
+}
+
+std::string Archer::print() {
+    return getNom()+ " " + std::to_string(getHp())+ "Hp";
+}
+
+

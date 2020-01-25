@@ -34,7 +34,7 @@ Case::Case() {}
 std::ostream &operator<<(std::ostream &os, const Case &aCase) {
     os << "u: " << aCase.checkFree() << " edgeCase: " << aCase.edgeCase << " f: ";
     if(aCase.f != nullptr){
-        os<<*aCase.f ;
+        os<<aCase.f ;
     }else{
         os<<aCase.f<<std::endl;
     }

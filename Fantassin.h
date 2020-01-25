@@ -24,6 +24,7 @@ public:
     void action3() override;
     void promote() override;
 
+    std::string print() override;
 };
 
 #endif //AOW_FANTASSIN_H

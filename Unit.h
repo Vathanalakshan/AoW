@@ -81,8 +81,8 @@ public:
     virtual void action1() = 0;//Forcer les classe filles a les definir + transformation en class abstraites
     virtual void action2() = 0;
     virtual void action3() = 0;
-
     virtual void promote() = 0;
+    virtual std::string print() = 0 ;
 
     void setI(int j);
 

@@ -14,11 +14,14 @@ protected:
 public:
     Catapulte(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool t);
 
+    friend std::ostream &operator<<(std::ostream &os, const Catapulte &catapulte);
 
     void action1() override;
     void action2() override;
     void action3() override;
 
+    void promote() override ;
+    std::string print() override;
 };
 
 

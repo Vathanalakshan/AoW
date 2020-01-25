@@ -40,7 +40,7 @@ void Fort::setTeam(bool i) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Fort &fort) {
-    os <<"Fort" <<fort.getHp() << std::endl;
+    os <<"Fort " << fort.isTeam() <<fort.getHp() << std::endl;
     return os;
 }
 
@@ -59,5 +59,8 @@ void Fort::takeDmg(int i) {
 
 std::string Fort::getNom() {
     return nom;
+}
+std::string Fort::print() {
+    return getNom()+ " " + std::to_string(getHp()) + "Hp";
 }
 

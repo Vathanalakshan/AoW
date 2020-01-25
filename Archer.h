@@ -9,6 +9,7 @@
 #include <ostream>
 #include "Unit.h"
 
+
 class Archer : public Unit{
 
 public:
@@ -18,8 +19,9 @@ public:
     void action1() override;
     void action2() override;
     void action3() override;
+    void promote() override;
 
-
+    std::string print() override;
 };
 
 

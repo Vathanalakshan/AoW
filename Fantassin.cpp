@@ -7,28 +7,23 @@
 Fantassin::Fantassin(int pos,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool t)
         : Unit(pos,hp, price, attackDmg, rangeMin, rangeMax, plateau, t) {
     id++;
-    if(team){
-        nom="Fantassin "+std::to_string(id);
-        nom=nom+" bleu";
-    }
-    else{
-        nom="Fantassin "+std::to_string(id);
-        nom=nom+" rouge";
-    }
+    nom = "Fan-" + std::to_string(id);
 }
 
 std::ostream &operator<<(std::ostream &os, const Fantassin &fantassin) {
-    os << "Haha";
+    os << fantassin.getNom() <<" "<<fantassin.getHp() <<" Hp";
     return os;
 }
 
 
 void Fantassin::action1(){
     if (isTeam()){
-        attack(pos+1);
+        int p=pos+1;
+        attack(p);
     }
     else{
-        attack(pos-1);
+        int p=pos-1;
+        attack(p);
     }
 
 std::cout<< "1 " << std::endl;
@@ -36,12 +31,16 @@ std::cout<< "1 " << std::endl;
 
 void Fantassin::action2(){
     if (isTeam()){
-        move(pos+1);
+        int p=pos+1;
+        move(p);
+        std::cout<< "+1 " << std::endl;
+
     }
     else{
-        move(pos-1);
+        int p=pos+1;
+        move(p);
+        std::cout<< "-1 " << std::endl;
     }
-std::cout<< "1 " << std::endl;
 };
 
 void Fantassin::action3(){
@@ -58,4 +57,8 @@ std::cout<< "1 " << std::endl;
 void Fantassin::promote() {
     superSoldat=true;
 
-};
+}
+
+std::string Fantassin::print() {
+    return getNom()+ " " + std::to_string(getHp()) + "Hp";
+}

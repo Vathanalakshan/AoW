@@ -112,6 +112,7 @@ bool Unit::isDead() {
         this->~Unit();
         return true;
     }
+    return false;
 }
 
 void Unit::doDmg(Fort *f, int i) {
@@ -143,6 +144,7 @@ void Unit::move(int position) {
     if (c.getE() == nullptr ){
         if(c.getF() == nullptr){
             plateau->moveUnit(pos,position);
+            std::cout << pos << "hhh" << position;
         }
     }
 }
@@ -160,6 +162,7 @@ void Unit::setI(int j) {
 }
 
 int Unit::id=0;
+
 
 
 

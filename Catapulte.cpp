@@ -7,14 +7,7 @@
 Catapulte::Catapulte(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool t)
         : Unit(p,hp, price, attackDmg, rangeMin, rangeMax, plateau, t) {
     id++;
-    if(team){
-        nom="Catapulte "+std::to_string(id);
-        nom=nom+" bleu";
-    }
-    else{
-        nom="Catapulte "+std::to_string(id);
-        nom=nom+" rouge";
-    }
+    nom = "Cata-" + std::to_string(id);
 }
 
 
@@ -59,4 +52,17 @@ void Catapulte::action3(){
         }
     }
     std::cout<< "1 " << std::endl;
-};
+}
+
+void Catapulte::promote() {
+
+}
+
+std::ostream &operator<<(std::ostream &os, const Catapulte &catapulte) {
+    os << catapulte.getNom() <<" "<<catapulte.getHp() <<" Hp";
+    return os;
+}
+
+std::string Catapulte::print() {
+    return getNom()+ " " + std::to_string(getHp())+ "Hp";
+}

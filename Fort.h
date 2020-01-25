@@ -43,6 +43,8 @@ public:
     void takeDmg(int i);
 
     std::string getNom();
+
+    std::string print();
 };
 
 #endif //AOW_FORT_H

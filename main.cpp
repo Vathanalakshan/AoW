@@ -4,7 +4,7 @@
 #include "Battlefield.h"
 #include "Archer.h"
 #include "Catapulte.h"
-
+#include "ConsoleColor.h"
 void actionsT(bool b, Battlefield battlefield);
 void actionsF(bool b, Battlefield battlefield);
 
@@ -20,28 +20,26 @@ int main() {
     Fort *f1=new Fort(0,&b,true);//A
     Fort *f2=new Fort(11,&b,false);//B
     b.Generer(f1,f2);
-    Fantassin*f=new Fantassin(0,100,47,25,24,25,&b,true);
-    Fantassin*f7=new Fantassin(0,100,47,25,24,25,&b,false);
-    Fantassin*f3=new Fantassin(0,100,47,25,24,25,&b,true);
-    Fantassin*f4=new Fantassin(0,100,47,25,24,25,&b,false);
-    Fantassin*f5=new Fantassin(0,100,47,25,24,25,&b,true);
-    Fantassin*f8=new Fantassin(0,100,47,25,24,25,&b,false);
-    Fantassin*f9=new Fantassin(0,100,47,25,24,25,&b,true);
-    Fantassin*f10=new Fantassin(0,100,47,25,24,25,&b,false);
+    auto*f=new Archer(0,100,47,25,24,25,&b,true);
+    auto*f7=new Fantassin(7,100,47,25,24,25,&b,false);
+    auto*f3=new Archer(3,100,47,25,24,25,&b,true);
+    auto*f4=new Catapulte(4,100,47,25,24,25,&b,false);
+    auto*f5=new Fantassin(5,100,47,25,24,25,&b,true);
+    auto*f8=new Fantassin(8,100,47,25,24,25,&b,false);
+    auto*f9=new Fantassin(9,100,47,25,24,25,&b,true);
+    auto*f10=new Fantassin(10,100,47,25,24,25,&b,false);
 
     b.Generer(f1,f2);
-    b.addUnit(f7,0);
-    b.addUnit(f3,1);
+    //b.addUnit(f7,0);
+    //b.addUnit(f3,1);
     b.addUnit(f5,2);
-    b.addUnit(f8,3);
-    b.addUnit(f4,4);
-    b.addUnit(f9,5);
-    b.addUnit(f10,6);
-    b.addUnit(f3,7);
-    b.addUnit(f7,8);
-    b.addUnit(f10,9);
-    b.addUnit(f4,10);
-    b.addUnit(f5,11);
+    //b.addUnit(f8,3);
+    //b.addUnit(f4,4);
+    //b.addUnit(f9,5);
+    //b.addUnit(f10,6);
+    //b.addUnit(f10,9);
+    //b.addUnit(f4,10);
+    //b.addUnit(f5,11);
     int compteur = 0;
     while(true)
     {
@@ -54,7 +52,9 @@ int main() {
         //buy(true,f1,b);
         //actionsF(false,b);
         //buy(true,f2,b);
+        std::cout<<red<<f1->print()<<white<<"                                      "<<blue<<f2->print() <<white<<std::endl;
         std::cout <<b;
+        b.getCase(2).getE()->action2();
 
 
         if(f1->getHp() <= 0){
@@ -68,7 +68,7 @@ int main() {
             break;
         }
         if(compteur>15){
-            std::cout<< "Equipe Rouge Gagne";
+            std::cout<< "Tour max atteint";
             b.~Battlefield();
             break;
         }
@@ -120,4 +120,8 @@ void actionsF(bool b, Battlefield bf) {
 }
 void buy(bool b, Fort *pFort, Battlefield battlefield) {
     std::cout<< "Vous avez " << pFort->getGold() <<"golds. Voulez vous acheter?" << std::endl;
+    if (b)
+        std::cout <<"Tapez F pour Fantassin,A pour Archer et C pour Catapulte";
+    else
+        std::cout <<"Tapez F pour Fantassin,A pour Archer et C pour Catapulte";
 }

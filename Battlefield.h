@@ -9,6 +9,7 @@
 #include <ostream>
 #include "Fort.h"
 #include "Case.h"
+#include "ConsoleColor.h"
 
 
 class Battlefield
