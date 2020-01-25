@@ -27,6 +27,8 @@ public:
     void removeUnit(int pos);
     void moveUnit(int pos1, int pos2);
 
+    bool checkCase(int pos);
+
 };
 
 

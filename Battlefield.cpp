@@ -13,7 +13,7 @@ Battlefield::Battlefield() {
 
 void Battlefield::Generer() {
     Fort *f1=new Fort(0,100,this,true);
-    Fort *f2=new Fort(11,100,this,true);
+    Fort *f2=new Fort(11,100,this,false);
 
     caseElements[0].setF(f1);
     caseElements[0].setEdgeCase(true);
@@ -50,4 +50,8 @@ void Battlefield::moveUnit(int pos1,int pos2){
     else
         std::cout << "Error";
 
+}
+
+bool Battlefield::checkCase(int pos) {
+    return caseElements[pos].checkFree();
 }
