@@ -11,9 +11,7 @@ Battlefield::Battlefield() {
     }
 }
 
-void Battlefield::Generer() {
-    Fort *f1=new Fort(0,100,this,true);
-    Fort *f2=new Fort(11,100,this,false);
+void Battlefield::Generer(Fort* f1,Fort* f2) {
 
     caseElements[0].setF(f1);
     caseElements[0].setEdgeCase(true);
@@ -22,10 +20,15 @@ void Battlefield::Generer() {
 }
 
 std::ostream &operator<<(std::ostream &os, const Battlefield &battlefield) {
-    for(const Case &t:battlefield.caseElements){
-        os << t << std::endl;
+    os<<"|";
+    for (const Case &t:battlefield.caseElements) {
+        if (t.checkFree())
+            os << "|   |";
+        else
+            os <<"|"<<t.getE() <<"|";
     }
-    return os;
+    return os << "|" <<std::endl;
+
 }
 
 void Battlefield::addUnit(Unit *u, int pos) {

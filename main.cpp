@@ -6,22 +6,28 @@
 #include "Catapulte.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    std::cout << "---------------------------------------------------------------------------------------------------"<<std::endl
+              << "----------------------------------------Age of War : Version Eco +---------------------------------"<<std::endl
+              << "---------------------------------------------------------------------------------------------------"<<std::endl;
+
+
     Battlefield b;
-    Player p;
-    Archer *a= new Archer(5,500,10,78,45,45,&b,&p);
-    Fantassin*f= new Fantassin(6,500,10,78,45,45,&b,&p);
-    Catapulte *c= new Catapulte(3,500,10,78,45,45,&b,&p);
-    b.Generer();
-    b.addUnit(a,a->getPos());
-    b.addUnit(f,f->getPos());
-    b.addUnit(c,c->getPos());
-    std::cout<<b;
+    Fort *f1=new Fort(0,&b,true);//A
+    Fort *f2=new Fort(11,&b,false);//B
+    b.Generer(f1,f2);
+    int compteur = 0;
+    while(true)
+    {
+        std::cout<< "Round numero " << compteur << std::endl;
+        std::cout<< "Les deux equipes recoit 8 gold."  << std::endl;
+        f1->setGold(8);
+        f2->setGold(8);
+        compteur++;
+        std::cout <<b;
+        if(compteur>15){
+            break;
+        }
 
-    //b.removeUnit(6);
-
-    b.moveUnit(3,2);
-    std::cout<<b;
-
+    }
     return 0;
 }

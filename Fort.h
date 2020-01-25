@@ -12,12 +12,17 @@ class Player;
 
 class Fort{
 protected:
+    int gold;
     int hp;
     Battlefield* Plateau;
     bool team;
 public:
 
-    Fort(int pos,int hp, Battlefield *plateau, bool team);
+    Fort(int pos, Battlefield *plateau, bool team);
+
+    int getGold() const;
+
+    void setGold(int gold);
 
     friend std::ostream &operator<<(std::ostream &os, const Fort &fort);
 
