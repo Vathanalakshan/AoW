@@ -19,7 +19,7 @@ protected :
     int rangeMax;
     Battlefield* plateau;
     bool team;
-    bool action1=false;
+    bool act=false;
 
 public:
     Unit(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool team);

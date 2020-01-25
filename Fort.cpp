@@ -46,3 +46,8 @@ void Fort::setGold(int i) {
     Fort::gold =Fort::gold+ i;
 }
 
+void Fort::takeDmg(int i) {
+    setHp(hp-i);
+
+}
+

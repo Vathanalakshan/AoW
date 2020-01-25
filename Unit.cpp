@@ -88,7 +88,7 @@ void Unit::setTeam(bool i) {
 
 bool Unit::doDmg(Unit *u, int i) {
     u->takeDmg(i);
-    action1=true;
+    act=true;
     if (u->isDead()){
         return true;
     }
@@ -108,11 +108,8 @@ bool Unit::isDead() {
 
 void Unit::doDmg(Fort *f, int i) {
     f->takeDmg(i);
-    action1=true;
-    if(f->isDead()){
-        plateau->win(this->isTeam());
+    act=true;
 
-    }
 
 
 }
@@ -143,11 +140,11 @@ void Unit::move(int position) {
 }
 
 int Unit::getact() const {
-    return action1;
+    return act;
 }
 
 void Unit::setact(bool act) {
-    this->action1=act;
+    this->act=act;
 }
 
 

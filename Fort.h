@@ -37,6 +37,8 @@ public:
     bool isTeam() const;
 
     void setTeam(bool team);
+
+    void takeDmg(int i);
 };
 
 #endif //AOW_FORT_H
