@@ -11,7 +11,7 @@ Battlefield::Battlefield() {
     }
 }
 
-void Battlefield::Generer(Player *p) {
+void Battlefield::Generer() {
     Fort *f1=new Fort(0,100,this,true);
     Fort *f2=new Fort(11,100,this,true);
 
@@ -19,8 +19,6 @@ void Battlefield::Generer(Player *p) {
     caseElements[0].setEdgeCase(true);
     caseElements[11].setF(f2);
     caseElements[11].setEdgeCase(true);
-    Fantassin *fan=new Fantassin(1,10,100,1,5,12,this,p);
-    caseElements[1].addUnit(fan);
 }
 
 std::ostream &operator<<(std::ostream &os, const Battlefield &battlefield) {
@@ -28,4 +26,28 @@ std::ostream &operator<<(std::ostream &os, const Battlefield &battlefield) {
         os << t << std::endl;
     }
     return os;
+}
+
+void Battlefield::addUnit(Unit *u, int pos) {
+    if(caseElements[pos].checkFree())
+        caseElements[pos].addUnit(u);
+    else
+        std::cout << "Case Pas Disponible";
+}
+
+void Battlefield::removeUnit(int pos) {
+    if(caseElements[pos].checkFree())
+        std::cout << "Case Vide";
+    else{
+        delete caseElements[pos].getE();
+        caseElements[pos].setE(nullptr);
+}}
+
+void Battlefield::moveUnit(int pos1,int pos2){
+    if(caseElements[pos2].checkFree() & !caseElements[pos1].checkFree()){
+        caseElements[pos2].setE(caseElements[pos1].getE());
+        caseElements[pos1].setE(nullptr);}
+    else
+        std::cout << "Error";
+
 }

@@ -22,7 +22,10 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const Battlefield &battlefield);
 
-    void Generer(Player *p);
+    void Generer();
+    void addUnit(Unit *u,int pos);
+    void removeUnit(int pos);
+    void moveUnit(int pos1, int pos2);
 
 };
 
