@@ -8,12 +8,7 @@ Fort::Fort(Battlefield *bf, bool b) {
     Plateau=bf;
     team=b;
     gold=0;
-    if(b){
-        nom="Fort rouge";
-    }
-    else{
-        nom="Fort bleu";
-    }
+    nom="Fort";
 }
 
 int Fort::getHp() const {
@@ -50,7 +45,7 @@ int Fort::getGold() const {
 }
 
 void Fort::setGold(int i) {
-    Fort::gold =Fort::gold+ i;
+    Fort::gold =i;
 }
 
 void Fort::takeDmg(int i) {
@@ -62,6 +57,6 @@ std::string Fort::getNom() {
     return nom;
 }
 std::string Fort::print() {
-    return getNom()+ " " + std::to_string(getHp()) + "Hp";
+    return getNom()+ " " + std::to_string(getHp()) + "Hp" + std::to_string(getGold()) + "Gold";
 }
 
