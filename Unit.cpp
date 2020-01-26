@@ -101,7 +101,7 @@ void Unit::doDmg(Unit *u, int i) {
         this->promote();
         plateau->removeUnit(u->getPos());
     }
-    std::cout<<nom<<" a attaqué "<<u->getNom()<<" et a infligé"<<i<<" points de dégats";
+    std::cout<<nom<<" a attaqué "<<u->getNom()<<" et a infligé"<<i<<" points de dégats"<< std::endl;
 }
 
 void Unit::takeDmg(int i) {
@@ -122,7 +122,7 @@ bool Unit::isDead() {
 void Unit::doDmg(Fort *f, int i) {
     f->takeDmg(i);
     act=true;
-    std::cout<<nom<<" a attaqué "<<f->getNom()<<" et a infligé"<<i<<" points de dégats";
+    std::cout<<nom<<" a attaqué "<<f->getNom()<<" et a infligé"<<i<<" points de dégats"<< std::endl;
 
 
 }

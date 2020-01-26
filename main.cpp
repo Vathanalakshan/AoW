@@ -20,8 +20,8 @@ int main() {
 
 
     Battlefield b;
-    Fort *f1= new Fort(&b, true);//BLUE
-    Fort *f2= new Fort(&b, false);//RED
+    Fort *f1= new Fort(&b, true);//EQUIPE BLEU
+    Fort *f2= new Fort(&b, false);//EQUIPE RED
     b.Generer(f1,f2);
     auto*f=new Archer(1,100,47,25,1,3,&b,true);
     auto*f7=new Fantassin(7,100,47,25,1,1,&b,false);
@@ -55,11 +55,13 @@ int main() {
         std::cout<<blue<<f1->print()<<white<<"                                      "<<red<<f2->print() <<white<<std::endl;
         std::cout <<b;
 
-        //actionsT(true,b);
+        actionsT(true,b);
         buy(true,f1,b);
-        //actionsF(false,b);
+        actionsF(false,b);
         buy(false,f2,b);
 
+        std::cout<<blue<<f1->print()<<white<<"                                      "<<red<<f2->print() <<white<<std::endl;
+        std::cout <<b;
 
         if(f1->getHp() <= 0){
             std::cout<< "Equipe Rouge Gagne";
