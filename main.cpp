@@ -63,7 +63,7 @@ int main() {
         std::cout <<b;
 
         if(f1->getHp() <= 0){
-            std::cout<< "Equipe Rouge Gagne";
+            std::cout<< "Equipe Rouge Gagne"<<std::endl;
             b.~Battlefield();
             break;
         }
@@ -132,7 +132,7 @@ void buy(bool b, Fort *pFort, Battlefield& battlefield) {
         FortPos=11;
         std::cout << red << "Equipe Rouge"<<std::endl;
     }
-    std::cout<< "Vous avez " << pFort->getGold() <<" golds." << std::endl << "Tapez 1 pour Fantassin,2 pour Archer et 3 pour Catapulte et 0 pour ne pas acheter"<< std::endl;
+    std::cout<< "Vous avez " << pFort->getGold() <<" golds." << std::endl << "Tapez 1 pour Fantassin,2 pour Archer et 3 pour Catapulte et 0 pour ne pas acheter"<<white<<std::endl;
     std::cin>>Choix;
     switch (Choix){
         case 1:
