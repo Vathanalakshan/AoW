@@ -20,6 +20,7 @@ public:
     void action2() override;
     void action3() override;
     void promote() override;
+    ~Archer() override ;
 
     std::string print() override;
 };
