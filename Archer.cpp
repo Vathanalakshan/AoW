@@ -11,7 +11,10 @@ Archer::Archer(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMa
 }
 
 void Archer::action1(){
-    for (int i=rangeMin; i<rangeMax+1;i++){
+    int rM=rangeMax;
+    if(pos==8 && team){rM=3;}
+    if(pos==7 && team){rM=4;}
+    for (int i=rangeMin; i<rM+1;i++){
         if (!act) {
             if (isTeam()) {
                 attack(pos + i);
@@ -25,10 +28,14 @@ void Archer::action1(){
 };
 void Archer::action2(){
     if (isTeam()){
-        move(pos+1);
+        if (pos < 8) {
+            move(pos + 1);
+        }
     }
     else{
-        move(pos-1);
+            if (pos > 3) {
+                move(pos-1);
+            }
     }
     std::cout<< "1 " << std::endl;
 

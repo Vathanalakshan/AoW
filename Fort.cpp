@@ -9,6 +9,12 @@ Fort::Fort(Battlefield *bf, bool b) {
     team=b;
     gold=0;
     nom="Fort";
+    if(b){
+        nom="Fort bleu";
+    }
+    else{
+        nom="Fort rouge";
+    }
 }
 
 int Fort::getHp() const {

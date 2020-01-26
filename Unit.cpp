@@ -99,17 +99,21 @@ void Unit::doDmg(Unit *u, int i) {
     act=true;
     if (u->isDead()){
         this->promote();
+        plateau->removeUnit(u->getPos());
     }
+    std::cout<<nom<<" a attaqué "<<u->getNom()<<" et a infligé"<<i<<" points de dégats";
 }
 
 void Unit::takeDmg(int i) {
     this->setHp(this->hp-i);
+    bool b=isDead();
+    //this->plateau->removeUnit(this->pos);
 
 }
 
 bool Unit::isDead() {
     if (hp<=0) {
-        this->~Unit();
+        this->plateau->removeUnit(this->pos);
         return true;
     }
     return false;
