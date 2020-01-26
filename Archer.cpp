@@ -23,6 +23,7 @@ void Archer::action1(){
             }
         }
     }
+    act=false;
 
     std::cout<< "1 " << std::endl;
 };
