@@ -20,8 +20,8 @@ int main() {
 
 
     Battlefield b;
-    Fort *f1= new Fort(&b, true);//A
-    Fort *f2= new Fort(&b, false);//B
+    Fort *f1= new Fort(&b, true);//BLUE
+    Fort *f2= new Fort(&b, false);//RED
     b.Generer(f1,f2);
     auto*f=new Archer(1,100,47,25,1,3,&b,true);
     auto*f7=new Fantassin(7,100,47,25,1,1,&b,false);
@@ -34,7 +34,7 @@ int main() {
 
     b.Generer(f1,f2);
     //b.addUnit(f7,f7->getPos());
-    b.addUnit(f3,f3->getPos());
+    //b.addUnit(f3,f3->getPos());
     //b.addUnit(f5,f5->getPos());
     //b.addUnit(f8,f8->getPos());
     //b.addUnit(f4,f4->getPos());
@@ -51,17 +51,14 @@ int main() {
         f1->setGold(f1->getGold()+8);
         f2->setGold(f2->getGold()+8);
         compteur++;
-        std::cout<<f5->getPos()<<"\n";
-        actionsT(true,b);
-        //buy(true,f1,b);
-        std::cout <<"wesh1"<<"\n";
-        actionsF(false,b);
-        //buy(true,f2,b);
-        std::cout <<"wesh1"<<"\n";
+
         std::cout<<blue<<f1->print()<<white<<"                                      "<<red<<f2->print() <<white<<std::endl;
-        std::cout <<"wesh1"<<"\n";
         std::cout <<b;
-        std::cout <<"wesh"<<"\n";
+
+        //actionsT(true,b);
+        buy(true,f1,b);
+        //actionsF(false,b);
+        buy(true,f2,b);
 
 
         if(f1->getHp() <= 0){
@@ -96,7 +93,6 @@ void actionsT(bool b, Battlefield& bf) {
         if (!bf.getCase(i).checkFree()){
             if(bf.getCase(i).getE()->isTeam() == b)
                 bf.getCase(i).getE()->action2();
-                std::cout<<bf.getCase(i).getE()->getPos();
             }
         }
     for (int i = 11; i >=0; i--) {
@@ -105,7 +101,6 @@ void actionsT(bool b, Battlefield& bf) {
                 bf.getCase(i).getE()->action3();
         }
     }
-    std::cout <<"pk";
 }
 void actionsF(bool b, Battlefield& bf) {
     for (int i = 11; i >=0; i--) {
@@ -131,10 +126,10 @@ void buy(bool b, Fort *pFort, Battlefield& battlefield) {
     int Choix,FortPos;
         if (pFort->isTeam()){
         FortPos=0;
-        std::cout << red << "Equipe Rouge"<<std::endl;
+        std::cout << blue << "Equipe Bleu"<<std::endl;
     } else{
         FortPos=11;
-        std::cout << blue << "Equipe Bleu"<<std::endl;
+        std::cout << red << "Equipe Rouge"<<std::endl;
     }
     std::cout<< "Vous avez " << pFort->getGold() <<" golds." << std::endl << "Tapez 1 pour Fantassin,2 pour Archer et 3 pour Catapulte et 0 pour ne pas acheter"<< std::endl;
     std::cin>>Choix;
