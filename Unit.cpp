@@ -170,6 +170,8 @@ void Unit::setI(int j) {
 
 int Unit::id=0;
 
+Unit::~Unit() = default;
+
 
 
 

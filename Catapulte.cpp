@@ -73,3 +73,7 @@ std::ostream &operator<<(std::ostream &os, const Catapulte &catapulte) {
 std::string Catapulte::print() {
     return getNom()+ " " + std::to_string(getHp())+ "Hp";
 }
+
+Catapulte::~Catapulte() {
+    std::cout<< nom << " meurt." << std::endl;
+}

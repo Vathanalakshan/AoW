@@ -70,3 +70,8 @@ void Fantassin::promote() {
 std::string Fantassin::print() {
     return getNom()+ " " + std::to_string(getHp()) + "Hp";
 }
+
+Fantassin::~Fantassin() {
+    std::cout<< nom << " meurt." << std::endl;
+}
+

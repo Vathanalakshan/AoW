@@ -19,6 +19,7 @@ public:
     void action1() override;
     void action2() override;
     void action3() override;
+    ~Catapulte() override;
 
     void promote() override ;
     std::string print() override;

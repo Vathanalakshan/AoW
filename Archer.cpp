@@ -54,4 +54,7 @@ std::string Archer::print() {
     return getNom()+ " " + std::to_string(getHp())+ "Hp";
 }
 
+Archer::~Archer() {
+    std::cout<< nom << " meurt." << std::endl;
+}
 

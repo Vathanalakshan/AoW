@@ -17,7 +17,7 @@ class Case {
 
     public:
     Case();
-
+    ~Case();
     Unit *getE() const;
 
     void setE(Unit *e);

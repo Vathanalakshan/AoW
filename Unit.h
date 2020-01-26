@@ -84,6 +84,7 @@ public:
     virtual void action3() = 0;
     virtual void promote() = 0;
     virtual std::string print() = 0 ;
+    virtual ~Unit();
 
     void setI(int j);
 

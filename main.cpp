@@ -69,12 +69,12 @@ int main() {
             break;
         }
         if(f2->getHp() <= 0){
-            std::cout<< "Equipe Bleu Gagne"<< std::endl;
+            std::cout<<green<< "Equipe Bleu Gagne"<< std::endl;
             b.~Battlefield();
             break;
         }
-        if(compteur>15){
-            std::cout<< "Tour max atteint"<< std::endl;
+        if(compteur>1500){
+            std::cout<<green<< "Tour max atteint"<< std::endl;
             b.~Battlefield();
             break;
         }
@@ -138,29 +138,29 @@ void buy(bool b, Fort *pFort, Battlefield& battlefield) {
     switch (Choix){
         case 1:
             if(battlefield.checkCase(FortPos) && pFort->getGold() >= 10){
-                battlefield.addUnit(new Fantassin(FortPos,10,10,4,1,1,&battlefield,b),FortPos);
+                battlefield.addUnit(new Fantassin(FortPos,10,10,94,1,1,&battlefield,b),FortPos);
                 std::cout <<"Ajout d'un Fantassin"<< std::endl;
                 pFort->setGold(pFort->getGold()-10);
             }else{
-                std::cout<<"Impossible erreur position ou argent"<< std::endl;
+                std::cout<<"Impossible : Erreur Position ou Argent" << std::endl;
                 break;
             }
         case 2:
             if(battlefield.checkCase(FortPos) && pFort->getGold() >= 12){
-                battlefield.addUnit(new Archer(FortPos,7,12,3,1,3,&battlefield,b),FortPos);
+                battlefield.addUnit(new Archer(FortPos,7,12,93,1,3,&battlefield,b),FortPos);
                 std::cout <<"Ajout d'un Archer"<< std::endl;
                 pFort->setGold(pFort->getGold()-12);
             }else{
-                std::cout<<"Impossible erreur position ou argent" << std::endl;
+                std::cout<<"Impossible : Erreur Position ou Argent" << std::endl;
                 break;
             }
         case 3:
             if(battlefield.checkCase(FortPos) && pFort->getGold() >= 22){
-                battlefield.addUnit(new Catapulte(FortPos,12,22,6,2,4,&battlefield,b),FortPos);
+                battlefield.addUnit(new Catapulte(FortPos,12,22,96,2,4,&battlefield,b),FortPos);
                 std::cout << "Ajout d'un Catapulte" << std::endl;
                 pFort->setGold(pFort->getGold()-22);
             }else{
-                std::cout<<"Impossible Erreur position ou argent"<< std::endl;
+                std::cout<<"Impossible : Erreur Position ou Argent" << std::endl;
                 break;
             }
         case 0:

@@ -46,7 +46,7 @@ void Battlefield::removeUnit(int pos) {
     if(caseElements[pos].checkFree())
         std::cout << "Case Vide";
     else{
-        //delete caseElements[pos].getE();
+        caseElements[pos].getE()->~Unit();
         caseElements[pos].setE(nullptr);
     }
 }
@@ -71,8 +71,9 @@ Case Battlefield::getCase(int pos){
 
 Battlefield::~Battlefield() {
     for (int i = 0; i < 12; ++i) {
+        caseElements[i].~Case();
     }
-    std::cout << "Destruction de plateau";
+    std::cout << "Destruction de plateau" << std::endl;
 }
 
 bool Battlefield::getTeam(int i) {

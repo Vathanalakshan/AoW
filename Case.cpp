@@ -51,4 +51,8 @@ void Case::addUnit(Unit *e) {
     u=e;
 }
 
+Case::~Case() {
+
+}
+
 
