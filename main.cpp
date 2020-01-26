@@ -141,6 +141,7 @@ void buy(bool b, Fort *pFort, Battlefield& battlefield) {
                 pFort->setGold(pFort->getGold()-10);
             }else{
                 std::cout<<"Impossible erreur position ou argent"<< std::endl;
+                break;
             }
         case 2:
             if(battlefield.checkCase(FortPos) && pFort->getGold() >= 12){
@@ -149,6 +150,7 @@ void buy(bool b, Fort *pFort, Battlefield& battlefield) {
                 pFort->setGold(pFort->getGold()-12);
             }else{
                 std::cout<<"Impossible erreur position ou argent" << std::endl;
+                break;
             }
         case 3:
             if(battlefield.checkCase(FortPos) && pFort->getGold() >= 22){
@@ -157,11 +159,11 @@ void buy(bool b, Fort *pFort, Battlefield& battlefield) {
                 pFort->setGold(pFort->getGold()-22);
             }else{
                 std::cout<<"Impossible Erreur position ou argent"<< std::endl;
+                break;
             }
         case 0:
             std::cout<<"On ne fait rien"<<std::endl;
             break;
     }
-
 }
 
