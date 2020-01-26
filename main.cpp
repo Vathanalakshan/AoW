@@ -11,7 +11,6 @@ void actionsF(bool b, Battlefield& bf);
 
 void buy(bool b, Fort *pFort, Battlefield& battlefield);
 
-std::ostream &coul(std::ostream &s);
 
 int main() {
     std::cout << "---------------------------------------------------------------------------------------------------"<<std::endl
@@ -23,26 +22,7 @@ int main() {
     Fort *f1= new Fort(&b, true);//EQUIPE BLEU
     Fort *f2= new Fort(&b, false);//EQUIPE RED
     b.Generer(f1,f2);
-    auto*f=new Archer(1,100,47,25,1,3,&b,true);
-    auto*f7=new Fantassin(7,100,47,25,1,1,&b,false);
-    auto*f3=new Archer(4,100,47,25,1,3,&b,true);
-    auto*f4=new Catapulte(6,100,47,25,2,4,&b,false);
-    auto*f5=new Fantassin(5,100,47,25,1,1,&b,true);
-    auto*f8=new Fantassin(8,100,47,25,1,1,&b,false);
-    auto*f9=new Fantassin(9,100,47,25,1,1,&b,true);
-    auto*f10=new Fantassin(10,100,47,25,1,1,&b,false);
 
-    b.Generer(f1,f2);
-    //b.addUnit(f7,f7->getPos());
-    //b.addUnit(f3,f3->getPos());
-    //b.addUnit(f5,f5->getPos());
-    //b.addUnit(f8,f8->getPos());
-    //b.addUnit(f4,f4->getPos());
-    //b.addUnit(f9,f9->getPos());
-    //b.addUnit(f10,f10->getPos());
-    //b.addUnit(f10,f10->getPos());
-    //b.addUnit(f4,1);
-    //b.addUnit(f5,11);
     int compteur = 0;
     while(true)
     {

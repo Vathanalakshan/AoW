@@ -24,7 +24,6 @@ void Catapulte::action1(){
             }
         }
     }
-    std::cout<<"shot";
     if(!act){
         if(isTeam()){
                 attack(pos + rangeMax);
