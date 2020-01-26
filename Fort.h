@@ -20,7 +20,7 @@ protected:
 
 public:
 
-    Fort(int pos, Battlefield *plateau, bool team);
+    Fort(Battlefield *bf, bool b);
 
     int getGold() const;
 

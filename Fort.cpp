@@ -1,8 +1,9 @@
 //
 // Created by Vathanan on 14/01/2020.
 //
+#include <string>
 #include "Fort.h"
-Fort::Fort(int pos, Battlefield *bf, bool b) {
+Fort::Fort(Battlefield *bf, bool b) {
     hp=100;
     Plateau=bf;
     team=b;

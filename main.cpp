@@ -17,8 +17,8 @@ int main() {
 
 
     Battlefield b;
-    Fort *f1=new Fort(0,&b,true);//A
-    Fort *f2=new Fort(11,&b,false);//B
+    Fort *f1= new Fort(&b, true);//A
+    Fort *f2= new Fort(&b, false);//B
     b.Generer(f1,f2);
     auto*f=new Archer(0,100,47,25,24,25,&b,true);
     auto*f7=new Fantassin(7,100,47,25,24,25,&b,false);
