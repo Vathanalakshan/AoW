@@ -58,7 +58,7 @@ int main() {
         //actionsT(true,b);
         buy(true,f1,b);
         //actionsF(false,b);
-        buy(true,f2,b);
+        buy(false,f2,b);
 
 
         if(f1->getHp() <= 0){
@@ -124,7 +124,7 @@ void actionsF(bool b, Battlefield& bf) {
 }
 void buy(bool b, Fort *pFort, Battlefield& battlefield) {
     int Choix,FortPos;
-        if (pFort->isTeam()){
+        if (b){
         FortPos=0;
         std::cout << blue << "Equipe Bleu"<<std::endl;
     } else{
@@ -136,7 +136,7 @@ void buy(bool b, Fort *pFort, Battlefield& battlefield) {
     switch (Choix){
         case 1:
             if(battlefield.checkCase(FortPos) && pFort->getGold() >= 10){
-                battlefield.addUnit(new Fantassin(FortPos,10,10,4,1,1,&battlefield,true),FortPos);
+                battlefield.addUnit(new Fantassin(FortPos,10,10,4,1,1,&battlefield,b),FortPos);
                 std::cout <<"Ajout d'un Fantassin"<< std::endl;
                 pFort->setGold(pFort->getGold()-10);
             }else{
@@ -145,7 +145,7 @@ void buy(bool b, Fort *pFort, Battlefield& battlefield) {
             }
         case 2:
             if(battlefield.checkCase(FortPos) && pFort->getGold() >= 12){
-                battlefield.addUnit(new Archer(FortPos,7,12,3,1,3,&battlefield,true),FortPos);
+                battlefield.addUnit(new Archer(FortPos,7,12,3,1,3,&battlefield,b),FortPos);
                 std::cout <<"Ajout d'un Archer"<< std::endl;
                 pFort->setGold(pFort->getGold()-12);
             }else{
@@ -154,7 +154,7 @@ void buy(bool b, Fort *pFort, Battlefield& battlefield) {
             }
         case 3:
             if(battlefield.checkCase(FortPos) && pFort->getGold() >= 22){
-                battlefield.addUnit(new Catapulte(FortPos,12,22,6,2,4,&battlefield,true),FortPos);
+                battlefield.addUnit(new Catapulte(FortPos,12,22,6,2,4,&battlefield,b),FortPos);
                 std::cout << "Ajout d'un Catapulte" << std::endl;
                 pFort->setGold(pFort->getGold()-22);
             }else{
