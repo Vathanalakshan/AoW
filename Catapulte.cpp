@@ -7,12 +7,11 @@
 Catapulte::Catapulte(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool t)
         : Unit(p,hp, price, attackDmg, rangeMin, rangeMax, plateau, t) {
     id++;
-    nom = "Cata-" + std::to_string(id);
+    nom = " Cata-" + std::to_string(id);
 }
 
 
 void Catapulte::action1(){
-    moved=false;
     for (int i=rangeMin; i<rangeMax;i++){
         if (!act) {
             if (isTeam()) {
@@ -25,23 +24,30 @@ void Catapulte::action1(){
             }
         }
     }
+    std::cout<<"shot";
     if(!act){
         if(isTeam()){
                 attack(pos + rangeMax);
+
                 Case c = plateau->getCase(pos + rangeMax - 1);
-                doDmg(c.getE(), attackDmg);
+                if(c.getE()!=nullptr) {
+                    doDmg(c.getE(), attackDmg);
+                }
+
         }
         else{
                 attack(pos - rangeMax);
                 Case c = plateau->getCase(pos - rangeMax + 1);
+            if(c.getE()!=nullptr) {
                 doDmg(c.getE(), attackDmg);
+            }
         }
     }
-    std::cout<< "1 " << std::endl;
+
 };
 
 void Catapulte::action2(){
-    std::cout<< "1 " << std::endl;
+
 
 };
 void Catapulte::action3(){
@@ -57,7 +63,6 @@ void Catapulte::action3(){
             }
         }
     }
-    std::cout<< "1 " << std::endl;
     act=false;
 }
 

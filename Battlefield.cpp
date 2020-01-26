@@ -43,8 +43,9 @@ void Battlefield::addUnit(Unit *u, int pos) {
 }
 
 void Battlefield::removeUnit(int pos) {
-    if(caseElements[pos].checkFree())
-        std::cout << "Case Vide";
+    if(caseElements[pos].checkFree()) {
+        //std::cout << "Case Vide";
+    }
     else{
         caseElements[pos].getE()->~Unit();
         caseElements[pos].setE(nullptr);

@@ -17,7 +17,6 @@ std::ostream &operator<<(std::ostream &os, const Fantassin &fantassin) {
 
 
 void Fantassin::action1(){
-    moved=false;
     if (isTeam()){
             int p = pos + 1;
             attack(p);
@@ -29,7 +28,6 @@ void Fantassin::action1(){
 
     }
 
-std::cout<< "act1 " << std::endl;
 };
 
 void Fantassin::action2(){
@@ -37,7 +35,7 @@ void Fantassin::action2(){
         if (pos < 10) {
         int p = pos + 1;
         move(p);
-        std::cout << "+1 " << std::endl;
+
         }
 
     }
@@ -45,10 +43,10 @@ void Fantassin::action2(){
         if(pos>1) {
             int p = pos - 1;
             move(p);
-            std::cout << "-1 " << std::endl;
+
         }
     }
-    std::cout<<"act2";
+
 };
 
 void Fantassin::action3(){
@@ -59,7 +57,7 @@ void Fantassin::action3(){
     }
     else{action1();}
     setact(false);
-std::cout<< "act3 " << std::endl;
+
 }
 
 void Fantassin::promote() {

@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "Player.h"
+
 #include "Fantassin.h"
 #include "Battlefield.h"
 #include "Archer.h"
@@ -26,7 +26,7 @@ int main() {
     auto*f=new Archer(1,100,47,25,1,3,&b,true);
     auto*f7=new Fantassin(7,100,47,25,1,1,&b,false);
     auto*f3=new Archer(4,100,47,25,1,3,&b,true);
-    auto*f4=new Catapulte(6,100,47,25,2,3,&b,false);
+    auto*f4=new Catapulte(6,100,47,25,2,4,&b,false);
     auto*f5=new Fantassin(5,100,47,25,1,1,&b,true);
     auto*f8=new Fantassin(8,100,47,25,1,1,&b,false);
     auto*f9=new Fantassin(9,100,47,25,1,1,&b,true);
@@ -54,7 +54,6 @@ int main() {
 
         std::cout<<blue<<f1->print()<<white<<"                                      "<<red<<f2->print() <<white<<std::endl;
         std::cout <<b;
-
         actionsT(true,b);
         buy(true,f1,b);
         actionsF(false,b);
@@ -141,6 +140,7 @@ void buy(bool b, Fort *pFort, Battlefield& battlefield) {
                 battlefield.addUnit(new Fantassin(FortPos,10,10,94,1,1,&battlefield,b),FortPos);
                 std::cout <<"Ajout d'un Fantassin"<< std::endl;
                 pFort->setGold(pFort->getGold()-10);
+                break;
             }else{
                 std::cout<<"Impossible : Erreur Position ou Argent" << std::endl;
                 break;
@@ -150,6 +150,7 @@ void buy(bool b, Fort *pFort, Battlefield& battlefield) {
                 battlefield.addUnit(new Archer(FortPos,7,12,93,1,3,&battlefield,b),FortPos);
                 std::cout <<"Ajout d'un Archer"<< std::endl;
                 pFort->setGold(pFort->getGold()-12);
+                break;
             }else{
                 std::cout<<"Impossible : Erreur Position ou Argent" << std::endl;
                 break;
@@ -159,6 +160,8 @@ void buy(bool b, Fort *pFort, Battlefield& battlefield) {
                 battlefield.addUnit(new Catapulte(FortPos,12,22,96,2,4,&battlefield,b),FortPos);
                 std::cout << "Ajout d'un Catapulte" << std::endl;
                 pFort->setGold(pFort->getGold()-22);
+                break;
+
             }else{
                 std::cout<<"Impossible : Erreur Position ou Argent" << std::endl;
                 break;

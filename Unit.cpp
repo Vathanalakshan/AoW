@@ -95,13 +95,13 @@ void Unit::setTeam(bool i) {
 }
 
 void Unit::doDmg(Unit *u, int i) {
+    std::cout<<this->getNom()<<" a attaque "<<u->getNom()<<" et a inflige"<<i<<" points de degats"<< std::endl;
     u->takeDmg(i);
     act=true;
     if (u->isDead()){
         this->promote();
         plateau->removeUnit(u->getPos());
     }
-    std::cout<<nom<<" a attaqué "<<u->getNom()<<" et a infligé"<<i<<" points de dégats"<< std::endl;
 }
 
 void Unit::takeDmg(int i) {
@@ -122,7 +122,7 @@ bool Unit::isDead() {
 void Unit::doDmg(Fort *f, int i) {
     f->takeDmg(i);
     act=true;
-    std::cout<<nom<<" a attaqué "<<f->getNom()<<" et a infligé"<<i<<" points de dégats"<< std::endl;
+    std::cout<<nom<<" a attaque "<<f->getNom()<<" et a inflige "<<i<<" points de degats" << std::endl;
 
 
 }
@@ -145,15 +145,11 @@ void Unit::attack(int position) {
 
 void Unit::move(int position) {
     Case c=plateau->getCase(position);
-    if (!moved){
         if (c.getE() == nullptr ){
             if(c.getF() == nullptr){
                 plateau->moveUnit(pos,position);
-                std::cout << pos << "hhh" << position;
-                moved=true;
             }
         }
-    }
 }
 
 int Unit::getact() const {

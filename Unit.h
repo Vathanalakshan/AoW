@@ -4,7 +4,7 @@
 
 #ifndef AOW_UNIT_H
 #define AOW_UNIT_H
-#include "Player.h"
+
 #include "Battlefield.h"
 #include <iostream>
 #include <sstream>
@@ -22,7 +22,7 @@ protected :
     bool act=false;
     std::string nom;
     static int id;
-    bool moved=false;
+
 
 public:
     Unit(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool team);
