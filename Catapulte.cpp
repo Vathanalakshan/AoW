@@ -12,6 +12,7 @@ Catapulte::Catapulte(int p,int hp, int price, int attackDmg, int rangeMin, int r
 
 
 void Catapulte::action1(){
+    moved=false;
     for (int i=rangeMin; i<rangeMax;i++){
         if (!act) {
             if (isTeam()) {
@@ -57,6 +58,7 @@ void Catapulte::action3(){
         }
     }
     std::cout<< "1 " << std::endl;
+    act=false;
 }
 
 void Catapulte::promote() {

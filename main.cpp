@@ -55,9 +55,9 @@ int main() {
         std::cout<<blue<<f1->print()<<white<<"                                      "<<red<<f2->print() <<white<<std::endl;
         std::cout <<b;
 
-        //actionsT(true,b);
+        actionsT(true,b);
         buy(true,f1,b);
-        //actionsF(false,b);
+        actionsF(false,b);
         buy(false,f2,b);
 
 

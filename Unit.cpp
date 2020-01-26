@@ -145,10 +145,13 @@ void Unit::attack(int position) {
 
 void Unit::move(int position) {
     Case c=plateau->getCase(position);
-    if (c.getE() == nullptr ){
-        if(c.getF() == nullptr){
-            plateau->moveUnit(pos,position);
-            std::cout << pos << "hhh" << position;
+    if (!moved){
+        if (c.getE() == nullptr ){
+            if(c.getF() == nullptr){
+                plateau->moveUnit(pos,position);
+                std::cout << pos << "hhh" << position;
+                moved=true;
+            }
         }
     }
 }
