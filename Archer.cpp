@@ -11,6 +11,7 @@ Archer::Archer(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMa
 }
 
 void Archer::action1(){
+    moved=false;
     int rM=rangeMax;
     if(pos==8 && team){rM=3;}
     if(pos==7 && team){rM=4;}

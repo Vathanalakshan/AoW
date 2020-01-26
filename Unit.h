@@ -22,6 +22,7 @@ protected :
     bool act=false;
     std::string nom;
     static int id;
+    bool moved=false;
 
 public:
     Unit(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool team);

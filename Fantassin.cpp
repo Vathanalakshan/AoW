@@ -17,6 +17,7 @@ std::ostream &operator<<(std::ostream &os, const Fantassin &fantassin) {
 
 
 void Fantassin::action1(){
+    moved=false;
     if (isTeam()){
             int p = pos + 1;
             attack(p);
