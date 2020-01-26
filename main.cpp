@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "Player.h"
 #include "Fantassin.h"
 #include "Battlefield.h"
@@ -98,14 +99,13 @@ void actionsT(bool b, Battlefield& bf) {
                 std::cout<<bf.getCase(i).getE()->getPos();
             }
         }
-    }
     for (int i = 11; i >=0; i--) {
         if (!bf.getCase(i).checkFree()){
             if(bf.getCase(i).getE()->isTeam() == b)
                 bf.getCase(i).getE()->action3();
         }
     }
-    std::cout<<"pk";
+    std::cout <<"pk";
 }
 void actionsF(bool b, Battlefield& bf) {
     for (int i = 11; i >=0; i--) {
