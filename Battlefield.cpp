@@ -11,7 +11,7 @@ Battlefield::Battlefield() {
     }
 }
 
-void Battlefield::Generer(Fort* f1,Fort* f2) {
+void Battlefield::Generer(Fort* f1,Fort* f2) {//génère les forts aux extrémités du plateau
 
     caseElements[0].setF(f1);
     caseElements[0].setEdgeCase(true);
@@ -19,7 +19,7 @@ void Battlefield::Generer(Fort* f1,Fort* f2) {
     caseElements[11].setEdgeCase(true);
 }
 
-std::ostream &operator<<(std::ostream &os, const Battlefield &battlefield) {
+std::ostream &operator<<(std::ostream &os, const Battlefield &battlefield) {//représentation du plateau
     os<<"|";
     for (const Case &t:battlefield.caseElements) {
         if (t.checkFree())
@@ -33,30 +33,30 @@ std::ostream &operator<<(std::ostream &os, const Battlefield &battlefield) {
     return os << "|" <<std::endl;
 }
 
-void Battlefield::addUnit(Unit *u, int pos) {
-    if (caseElements[pos].checkFree()){
-        caseElements[pos].addUnit(u);
-        u->setPos(pos);}
+void Battlefield::addUnit(Unit *u, int pos) {//rajout d'une unité u sur le terrain à la position pos
+    if (caseElements[pos].checkFree()){//vérifie si emplacement vide
+        caseElements[pos].addUnit(u);//rajoute sur plateau
+        u->setPos(pos);}//met à jour attribut unité
     else {
         std::cout << "Case Pas Disponible";
     }
 }
 
-void Battlefield::removeUnit(int pos) {
+void Battlefield::removeUnit(int pos) {//enlève une unité du plateau
     if(caseElements[pos].checkFree()) {
         //std::cout << "Case Vide";
     }
     else{
-        caseElements[pos].getE()->~Unit();
+        caseElements[pos].getE()->~Unit();//appel destructeur
         caseElements[pos].setE(nullptr);
     }
 }
 
-void Battlefield::moveUnit(int pos1,int pos2){
-    if(caseElements[pos2].checkFree()){
-        caseElements[pos2].setE(caseElements[pos1].getE());
-        caseElements[pos1].setE(nullptr);
-        caseElements[pos2].getE()->setPos(pos2);}
+void Battlefield::moveUnit(int pos1,int pos2){//déplacement de l'unité du point pos1 au point pos2
+    if(caseElements[pos2].checkFree()){//si case disponible
+        caseElements[pos2].setE(caseElements[pos1].getE());//met dans case
+        caseElements[pos1].setE(nullptr);//enlève de case occupé précédemment
+        caseElements[pos2].getE()->setPos(pos2);}//màj de pos dans unit
     else
         std::cout << "Error";
 

@@ -11,17 +11,17 @@
 
 class Unit{
 protected :
-    int pos;
-    int hp;
-    int price;
-    int attackDmg;
-    int rangeMin;
-    int rangeMax;
+    int pos; //position dans le tableau de case
+    int hp; //points de vie actuel
+    int price; //prix de d'achat de l'unité
+    int attackDmg; //dégats d'attaque de l'unité
+    int rangeMin;//portée minimale
+    int rangeMax; //portée maximale
     Battlefield* plateau;
-    bool team;
-    bool act=false;
-    std::string nom;
-    static int id;
+    bool team; //appartenance à l'équipe, true pour bleu, false pour rouge
+    bool act=false; // bool renvoyant si l'action 1 a été effectuée ou non
+    std::string nom; //nom de l'unité
+    static int id;// identifiant unique des unités, utilisés pour créer le nom
 
 
 public:
@@ -29,6 +29,7 @@ public:
 
     Unit(int p);
 
+    //getters and setters
     int getHp() const;
 
     void setHp(int hp);
@@ -67,24 +68,24 @@ public:
 
     void setTeam(bool team);
 
-    void doDmg(Unit *u, int i);
+    void doDmg(Unit *u, int i); //inflige des degats i à une unité u
 
-    void doDmg(Fort *f, int i);
+    void doDmg(Fort *f, int i);//inflige des degats i à un fort f
 
-    void attack(int position);
+    void attack(int position);//essaye d'attaquer le contenu de la case d'indice position
 
-    void move(int position);
+    void move(int position);//essaye de se déplacer dans la case d'indice position
 
-    void takeDmg(int i);
+    void takeDmg(int i); //subit des dégats d'un montant i
 
-    bool isDead();
+    bool isDead();//vérifie si décédé
 
     virtual void action1() = 0;//Forcer les classe filles a les definir + transformation en class abstraites
     virtual void action2() = 0;
     virtual void action3() = 0;
-    virtual void promote() = 0;
+    virtual void promote() = 0;//promote si tue une unité, utile que dans fantassin
     virtual std::string print() = 0 ;
-    virtual ~Unit();
+    virtual ~Unit();//destructeur
 
     void setI(int j);
 

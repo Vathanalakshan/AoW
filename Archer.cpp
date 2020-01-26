@@ -10,23 +10,22 @@ Archer::Archer(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMa
 
 }
 
-void Archer::action1(){
+void Archer::action1(){//attaque l'ennemi le plus proche
     int rM=rangeMax;
     if(pos==8 && team){rM=3;}
-    if(pos==7 && team){rM=4;}
-    for (int i=rangeMin; i<rM+1;i++){
-        if (!act) {
-            if (isTeam()) {
+    for (int i=rangeMin; i<rM+1;i++){//pour tout la portée, en partant du plus proche
+        if (!act) {//si pas déjà attaquer
+            if (isTeam()) {//attaque selon coté
                 attack(pos + i);
             } else {
                 attack(pos - i);
             }
         }
     }
-    act=false;
+    act=false;//réinitialisation pour tour prochain
 
 };
-void Archer::action2(){
+void Archer::action2(){//déplacement par rapport à la limite du terrain+ portée max
     if (isTeam()){
         if (pos < 8) {
             move(pos + 1);

@@ -12,10 +12,10 @@ class Player;
 
 class Fort{
 protected:
-    int gold;
-    int hp;
+    int gold;// argent du joueur
+    int hp; //points de vie
     Battlefield* Plateau;
-    bool team;
+    bool team;//appartenance à l'équipe, true pour bleu, false pour rouge
     std::string nom;
 
 public:

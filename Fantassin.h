@@ -11,7 +11,7 @@
 class Fantassin : public Unit{
 
 private:
-    bool superSoldat=false;
+    bool superSoldat=false;//bool si supersoldat
 
 public:
     Fantassin(int pos,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool t);

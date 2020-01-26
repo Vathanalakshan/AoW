@@ -11,9 +11,9 @@ Catapulte::Catapulte(int p,int hp, int price, int attackDmg, int rangeMin, int r
 }
 
 
-void Catapulte::action1(){
+void Catapulte::action1(){//attaque de zone selon portée
     for (int i=rangeMin; i<rangeMax;i++){
-        if (!act) {
+        if (!act) {//si pas déjà attaquer, essaye d'attaquer ennemi selon la portée
             if (isTeam()) {
 
                 attack(pos + i);
@@ -24,7 +24,7 @@ void Catapulte::action1(){
             }
         }
     }
-    if(!act){
+    if(!act){//si pas déjà attaqué, et qu'un ennemi est sur la portée maximale, attaque et peut toucher un soldat allier
         if(isTeam()){
                 attack(pos + rangeMax);
 
@@ -49,7 +49,7 @@ void Catapulte::action2(){
 
 
 };
-void Catapulte::action3(){
+void Catapulte::action3(){//se déplace si pas attaquer, limité par taille du plateau+portée max
     if(!getact()){
         if (isTeam()){
             if (pos < 7) {

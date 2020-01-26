@@ -4,16 +4,16 @@
 #include "Unit.h"
 
 Unit::Unit(int p,int health, int prix, int ad, int rMin, int rMax, Battlefield *bf,bool t) {
-    pos=p;
-    hp=health;
-    price=prix;
-    attackDmg=ad;
-    rangeMin=rMin;
-    rangeMax=rMax;
-    plateau=bf;
-    team=t;
+    pos=p; //position dans le tableau de case
+    hp=health; //points de vie actuel
+    price=prix; //prix de d'achat de l'unité
+    attackDmg=ad; //dégats d'attaque de l'unité
+    rangeMin=rMin; //portée minimale
+    rangeMax=rMax; //portée maximale
+    plateau=bf; //plateau de jeu
+    team=t;//appartenance à l'équipe, true pour bleu, false pour rouge
 }
-
+// getters et setters:
 Unit::Unit(int p) {
     pos=p;
 }
@@ -99,18 +99,16 @@ void Unit::doDmg(Unit *u, int i) {
     if(team){std::cout<< blue <<this->getNom()<<" a attaque "<<u->getNom()<<" et a inflige"<<i<<" points de degats"<< std::endl;}
     else{std::cout<< red <<this->getNom()<<" a attaque "<<u->getNom()<<" et a inflige"<<i<<" points de degats"<< std::endl;}
     std::cout<<g<<this->getNom()<<" a attaque "<<u->getNom()<<" et a inflige"<<i<<" points de degats"<< std::endl;
-    u->takeDmg(i);
-    act=true;
-    if (u->isDead()){
-        this->promote();
-        plateau->removeUnit(u->getPos());
+    u->takeDmg(i); //inflige les dégats
+    act=true;//a effectué l'action
+    if (u->isDead()){//vérifie si unité meurt
+        this->promote();//promotion
+        plateau->removeUnit(u->getPos());//suppresion de l'unité morte
     }
 }
 
 void Unit::takeDmg(int i) {
-    this->setHp(this->hp-i);
-    bool b=isDead();
-    //this->plateau->removeUnit(this->pos);
+    this->setHp(this->hp-i);//enleve i aux points de vie
 
 }
 
@@ -123,8 +121,8 @@ bool Unit::isDead() {
 }
 
 void Unit::doDmg(Fort *f, int i) {
-    f->takeDmg(i);
-    act=true;
+    f->takeDmg(i);//inflige degats
+    act=true;//action effectuée
     std::string g;
     if(team){std::cout<< blue <<nom<<" a attaque "<<f->getNom()<<" et a inflige "<<i<<" points de degats" << std::endl;}
     else{std::cout<< red <<nom<<" a attaque "<<f->getNom()<<" et a inflige "<<i<<" points de degats" << std::endl;}
@@ -133,26 +131,26 @@ void Unit::doDmg(Fort *f, int i) {
 }
 
 void Unit::attack(int position) {
-    Case c=plateau->getCase(position);
-    Unit *u=c.getE();
-    if (c.getE() == nullptr ){
-        if(c.getF() != nullptr){
-            doDmg(c.getF(), attackDmg);
+    Case c=plateau->getCase(position);//recupère case cible
+    Unit *u=c.getE();//recupere unité
+    if (c.getE() == nullptr ){//si pas d'unité
+        if(c.getF() != nullptr){//regarde si fort présent
+            doDmg(c.getF(), attackDmg); //si oui attaque
         }
     }
-    else{
-        if(sameTeam(u))
+    else{//si unité présente
+        if(sameTeam(u)) //vérifie si même équipe
             {}
-        else{doDmg(u, attackDmg);}
+        else{doDmg(u, attackDmg);}//sinon attaque
     }
 
 }
 
 void Unit::move(int position) {
-    Case c=plateau->getCase(position);
-        if (c.getE() == nullptr ){
-            if(c.getF() == nullptr){
-                plateau->moveUnit(pos,position);
+    Case c=plateau->getCase(position);//récupère case cible
+        if (c.getE() == nullptr ){//si pas d'unité
+            if(c.getF() == nullptr){//et si pas de fort
+                plateau->moveUnit(pos,position);//se déplace
                 std::string g;
                 if(team){std::cout<< blue <<nom<<" a avance" << std::endl;}
                 else{std::cout<< red <<nom<<" a avance" << std::endl;}
