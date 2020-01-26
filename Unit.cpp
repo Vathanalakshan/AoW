@@ -95,7 +95,10 @@ void Unit::setTeam(bool i) {
 }
 
 void Unit::doDmg(Unit *u, int i) {
-    std::cout<<this->getNom()<<" a attaque "<<u->getNom()<<" et a inflige"<<i<<" points de degats"<< std::endl;
+    std::string g;
+    if(team){std::cout<< blue <<this->getNom()<<" a attaque "<<u->getNom()<<" et a inflige"<<i<<" points de degats"<< std::endl;}
+    else{std::cout<< red <<this->getNom()<<" a attaque "<<u->getNom()<<" et a inflige"<<i<<" points de degats"<< std::endl;}
+    std::cout<<g<<this->getNom()<<" a attaque "<<u->getNom()<<" et a inflige"<<i<<" points de degats"<< std::endl;
     u->takeDmg(i);
     act=true;
     if (u->isDead()){
@@ -122,7 +125,9 @@ bool Unit::isDead() {
 void Unit::doDmg(Fort *f, int i) {
     f->takeDmg(i);
     act=true;
-    std::cout<<nom<<" a attaque "<<f->getNom()<<" et a inflige "<<i<<" points de degats" << std::endl;
+    std::string g;
+    if(team){std::cout<< blue <<nom<<" a attaque "<<f->getNom()<<" et a inflige "<<i<<" points de degats" << std::endl;}
+    else{std::cout<< red <<nom<<" a attaque "<<f->getNom()<<" et a inflige "<<i<<" points de degats" << std::endl;}
 
 
 }
@@ -148,6 +153,9 @@ void Unit::move(int position) {
         if (c.getE() == nullptr ){
             if(c.getF() == nullptr){
                 plateau->moveUnit(pos,position);
+                std::string g;
+                if(team){std::cout<< blue <<nom<<" a avance" << std::endl;}
+                else{std::cout<< red <<nom<<" a avance" << std::endl;}
             }
         }
 }

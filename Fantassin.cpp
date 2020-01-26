@@ -62,6 +62,7 @@ void Fantassin::action3(){
 
 void Fantassin::promote() {
     superSoldat=true;
+    nom="S"+nom;
 
 }
 
