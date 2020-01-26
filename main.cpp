@@ -109,7 +109,7 @@ void actionsF(bool b, Battlefield& bf) {
                 bf.getCase(i).getE()->action1();
         }
     }
-    for (int i = 11; i >=0; i--) {
+    for (int i = 0; i < 12; i++) {
         if (!bf.getCase(i).checkFree()){
             if(bf.getCase(i).getE()->isTeam() == b)
                 bf.getCase(i).getE()->action2();
