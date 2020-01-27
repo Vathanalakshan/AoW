@@ -1,13 +1,10 @@
-//
-// Created by Vathanan on 25/01/2020.
-//
+#ifndef COLOUR_H
+#define COLOUR_H
 
-#ifndef AOW_CONSOLECOLOR_H
-#define AOW_CONSOLECOLOR_H
-// ConsoleColor.h
-
-#pragma once
 #include <iostream>
+
+#if defined(_WIN32)
+
 #include <windows.h>
 
 inline std::ostream& blue(std::ostream &s)
@@ -64,5 +61,20 @@ operator<<(std::basic_ostream<_Elem,_Traits>& i, color& c)
     return i;
 }
 
-// Copyleft Vincent Godin
-#endif //AOW_CONSOLECOLOR_H
+#elif defined(__linux__) || defined(__APPLE__)
+
+inline std::ostream& blue(std::ostream &s) { return s << "\033[34m"; }
+
+inline std::ostream& red(std::ostream &s) { return s << "\033[31m"; }
+
+inline std::ostream& green(std::ostream &s) { return s << "\033[32m"; }
+
+inline std::ostream& yellow(std::ostream &s) { return s << "\033[33m"; }
+
+inline std::ostream& white(std::ostream &s) { return s << "\033[37m"; }
+
+#else
+#error "Incompatible OS. This only supports Windows and Linux."
+#endif
+
+#endif //COLOUR_H
