@@ -46,28 +46,24 @@ int main() {
 
         if(f1->getHp() <= 0){//vérification mort fort1
             std::cout<<green<< "Equipe Rouge Gagne"<<white <<std::endl;
-            b.~Battlefield();
             run=false;
             std::cout << "---------------------------------------------------------------------------------------------------"<<std::endl;
             break;
         }
         if(f2->getHp() <= 0){//vérification mort fort2
             std::cout<<green<< "Equipe Bleu Gagne"<<white<< std::endl;
-            b.~Battlefield();
             run=false;
             std::cout << "---------------------------------------------------------------------------------------------------"<<std::endl;
             break;
         }
         if(compteur>3){//limite de nombre de tour
             std::cout<<green<< "Tour max atteint"<<white<< std::endl;
-            b.~Battlefield();
             run=false;
             std::cout << "---------------------------------------------------------------------------------------------------"<<std::endl;
             break;
         }
         std::cout << "---------------------------------------------------------------------------------------------------"<<std::endl;
     }
-    std::cout << "Hehe" ;
     return 0;
 }
 
