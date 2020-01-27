@@ -30,9 +30,8 @@ public:
     void removeUnit(int pos);
     void moveUnit(int pos1, int pos2);
     bool getTeam(int i);
-
+    void sauvegarder(int k);
     bool checkCase(int pos);
-
     Case getCase(int pos);
 };
 

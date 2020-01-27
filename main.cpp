@@ -43,7 +43,7 @@ int main() {
         std::cout <<b;//réafficha données plateau
 
         //vérification conditions d'arret
-
+        b.sauvegarder(compteur);
         if(f1->getHp() <= 0){//vérification mort fort1
             std::cout<<green<< "Equipe Rouge Gagne"<<white <<std::endl;
             run=false;
@@ -56,7 +56,7 @@ int main() {
             std::cout << "---------------------------------------------------------------------------------------------------"<<std::endl;
             break;
         }
-        if(compteur>3){//limite de nombre de tour
+        if(compteur>20){//limite de nombre de tour
             std::cout<<green<< "Tour max atteint"<<white<< std::endl;
             run=false;
             std::cout << "---------------------------------------------------------------------------------------------------"<<std::endl;

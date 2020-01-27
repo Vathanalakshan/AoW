@@ -2,6 +2,7 @@
 // Created by Vathanan on 14/01/2020.
 //
 
+#include <fstream>
 #include "Battlefield.h"
 #include "Fantassin.h"
 
@@ -83,4 +84,23 @@ Battlefield::~Battlefield() {
 
 bool Battlefield::getTeam(int i) {
     return caseElements[i].getE()->isTeam();
+}
+
+void Battlefield::sauvegarder(int k) {
+    std::stringstream Sortie;
+
+    Sortie << "Tour numero : " <<k << std::endl;
+
+    for (int i = 0; i < 12; ++i) {
+        if(caseElements[i].isEdgeCase()){
+            Sortie << "Case :"<< i<< "Fort " << caseElements[i].getF()->getNom() << caseElements[i].getF()->isTeam() << caseElements[i].getF()->getHp() << std::endl;
+        }
+        if(!caseElements[i].checkFree())
+            Sortie << "Case :"<< i<<  "Unité " << caseElements[i].getE()->getNom() << caseElements[i].getE()->isTeam() << caseElements[i].getE()->getHp() << std::endl;
+    }
+
+    std::ofstream write;
+    write.open("Sortie.txt");
+    write << Sortie.str();
+    write.close();
 }
