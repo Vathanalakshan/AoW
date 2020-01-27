@@ -22,9 +22,9 @@ int main() {
     Fort *f1= new Fort(&b, true);//EQUIPE BLEU
     Fort *f2= new Fort(&b, false);//EQUIPE RED
     b.Generer(f1,f2);//générer les forts dans plateau
-
+    bool run=true;//Stopper le programme
     int compteur = 0;
-    while(true) //boucle pour chaque tour
+    while(run) //boucle pour chaque tour
     {
         std::cout<< white<< "Round numero " << compteur << std::endl;
         std::cout<< "Les deux equipes recoit 8 golds."  << std::endl;
@@ -45,22 +45,29 @@ int main() {
         //vérification conditions d'arret
 
         if(f1->getHp() <= 0){//vérification mort fort1
-            std::cout<< "Equipe Rouge Gagne"<<std::endl;
+            std::cout<<green<< "Equipe Rouge Gagne"<<white <<std::endl;
             b.~Battlefield();
+            run=false;
+            std::cout << "---------------------------------------------------------------------------------------------------"<<std::endl;
             break;
         }
         if(f2->getHp() <= 0){//vérification mort fort2
-            std::cout<<green<< "Equipe Bleu Gagne"<< std::endl;
+            std::cout<<green<< "Equipe Bleu Gagne"<<white<< std::endl;
             b.~Battlefield();
+            run=false;
+            std::cout << "---------------------------------------------------------------------------------------------------"<<std::endl;
             break;
         }
-        if(compteur>1500){//limite de nombre de tour
-            std::cout<<green<< "Tour max atteint"<< std::endl;
+        if(compteur>3){//limite de nombre de tour
+            std::cout<<green<< "Tour max atteint"<<white<< std::endl;
             b.~Battlefield();
+            run=false;
+            std::cout << "---------------------------------------------------------------------------------------------------"<<std::endl;
             break;
         }
         std::cout << "---------------------------------------------------------------------------------------------------"<<std::endl;
     }
+    std::cout << "Hehe" ;
     return 0;
 }
 

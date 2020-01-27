@@ -66,3 +66,7 @@ std::string Fort::print() {
     return getNom()+ " " + std::to_string(getHp()) + "Hp" + std::to_string(getGold()) + "Gold";
 }
 
+Fort::~Fort() {
+
+}
+

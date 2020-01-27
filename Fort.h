@@ -22,6 +22,8 @@ public:
 
     Fort(Battlefield *bf, bool b);
 
+    virtual ~Fort();
+
     int getGold() const;
 
     void setGold(int gold);

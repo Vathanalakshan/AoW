@@ -72,9 +72,16 @@ Case Battlefield::getCase(int pos){
 
 Battlefield::~Battlefield() {
     for (int i = 0; i < 12; ++i) {
+        std::cout << "1" << std::endl;
+        delete caseElements[i].getE();//appel destructeur
+        if(caseElements[i].isEdgeCase()){
+            delete  caseElements[i].getF();//appel destructeur
+            std::cout << "2" << std::endl;
+        }
         caseElements[i].~Case();
+        std::cout << "3" << std::endl;
     }
-    std::cout << "Destruction de plateau" << std::endl;
+    std::cout << "Tout le plateau est detruit" << std::endl;
 }
 
 bool Battlefield::getTeam(int i) {
