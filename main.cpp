@@ -8,8 +8,8 @@
 #include "ConsoleColor.h"
 void actionsT(bool b, Battlefield& bf);
 void actionsF(bool b, Battlefield& bf);
-
 void buy(bool b, Fort *pFort, Battlefield& battlefield);
+void buyIA(Fort *pFort, Battlefield& battlefield);
 
 
 int main() {
@@ -23,6 +23,18 @@ int main() {
     Fort *f2= new Fort(&b, false);//EQUIPE RED
     b.Generer(f1,f2);//générer les forts dans plateau
     bool run=true;//Stopper le programme
+    int pvp;
+    bool IA;
+    std::cout << "Type 0 for PVP or 1 for PVE" << std::endl;
+    std::cin>>pvp;
+
+    if(pvp==0){
+        IA=false;
+        std::cout << "PVP MODE" << std::endl;
+    }else{
+        IA=true;
+        std::cout<<"PVE MODE" << std::endl;
+    }
     int compteur = 0;
     while(run) //boucle pour chaque tour
     {
@@ -32,12 +44,28 @@ int main() {
         f2->setGold(f2->getGold()+8);
         compteur++;
 
-        std::cout<<blue<<f1->print()<<white<<"                                      "<<red<<f2->print() <<white<<std::endl; //afichage donnée fort
-        std::cout <<b;//affichage du plateau
+        std::cout<< "Actions Equipe Bleu"  << std::endl;
         actionsT(true,b);//ensemble actions coté bleu
+        std::cout<<blue<<f1->print()<<white<<"                                      "<<red<<f2->print() <<white<<std::endl;
+        std::cout <<b;//réafficha données plateau
+
+        std::cout<< "Achats equipe Bleu."  << std::endl;
         buy(true,f1,b);//shopping time bleu
+
+        std::cout<<blue<<f1->print()<<white<<"                                      "<<red<<f2->print() <<white<<std::endl;
+        std::cout <<b;//réafficha données plateau
+
+        std::cout<< "Actions Equipe Rouge"  << std::endl;
         actionsF(false,b);//ensemble actions coté rouge
-        buy(false,f2,b);// shopping time rouge
+        std::cout<<blue<<f1->print()<<white<<"                                      "<<red<<f2->print() <<white<<std::endl;
+        std::cout <<b;//réafficha données plateau
+
+        std::cout<< "Achats Equipe Bleu"  << std::endl;
+        if(IA){
+            buyIA(f2,b);
+        }else {
+            buy(false, f2, b);// shopping time rouge
+        }
 
         std::cout<<blue<<f1->print()<<white<<"                                      "<<red<<f2->print() <<white<<std::endl;
         std::cout <<b;//réafficha données plateau
@@ -56,7 +84,7 @@ int main() {
             std::cout << "---------------------------------------------------------------------------------------------------"<<std::endl;
             break;
         }
-        if(compteur>20){//limite de nombre de tour
+        if(compteur>30){//limite de nombre de tour
             std::cout<<green<< "Tour max atteint"<<white<< std::endl;
             run=false;
             std::cout << "---------------------------------------------------------------------------------------------------"<<std::endl;
@@ -66,6 +94,8 @@ int main() {
     }
     return 0;
 }
+
+
 
 
 void actionsT(bool b, Battlefield& bf) {//actions coté bleu
@@ -110,7 +140,7 @@ void actionsF(bool b, Battlefield& bf) {
 }
 void buy(bool b, Fort *pFort, Battlefield& battlefield) {//achat unité
     int Choix,FortPos;
-        if (b){
+    if (b){
         FortPos=0;
         std::cout << blue << "Equipe Bleu"<<std::endl;
     } else{
@@ -122,7 +152,7 @@ void buy(bool b, Fort *pFort, Battlefield& battlefield) {//achat unité
     switch (Choix){
         case 1://achat fantassin
             if(battlefield.checkCase(FortPos) && pFort->getGold() >= 10){//vérification du compte bancaire
-                battlefield.addUnit(new Fantassin(FortPos,10,10,94,1,1,&battlefield,b),FortPos);//génération sur terrain
+                battlefield.addUnit(new Fantassin(FortPos,10,10,4,1,1,&battlefield,b),FortPos);//génération sur terrain
                 std::cout <<"Ajout d'un Fantassin"<< std::endl;
                 pFort->setGold(pFort->getGold()-10);//retrait bancaire
                 break;
@@ -132,7 +162,7 @@ void buy(bool b, Fort *pFort, Battlefield& battlefield) {//achat unité
             }
         case 2://achat archer
             if(battlefield.checkCase(FortPos) && pFort->getGold() >= 12){//vérification du compte bancaire
-                battlefield.addUnit(new Archer(FortPos,7,12,93,1,3,&battlefield,b),FortPos);//génération sur terrain
+                battlefield.addUnit(new Archer(FortPos,7,12,3,1,3,&battlefield,b),FortPos);//génération sur terrain
                 std::cout <<"Ajout d'un Archer"<< std::endl;
                 pFort->setGold(pFort->getGold()-12);//retrait bancaire
                 break;
@@ -142,7 +172,7 @@ void buy(bool b, Fort *pFort, Battlefield& battlefield) {//achat unité
             }
         case 3://achat catapulte
             if(battlefield.checkCase(FortPos) && pFort->getGold() >= 22){//vérification du compte bancaire
-                battlefield.addUnit(new Catapulte(FortPos,12,22,96,2,4,&battlefield,b),FortPos);//génération sur terrain
+                battlefield.addUnit(new Catapulte(FortPos,12,22,6,2,4,&battlefield,b),FortPos);//génération sur terrain
                 std::cout << "Ajout d'un Catapulte" << std::endl;
                 pFort->setGold(pFort->getGold()-22);//retrait bancaire
                 break;
@@ -160,4 +190,29 @@ void buy(bool b, Fort *pFort, Battlefield& battlefield) {//achat unité
 
     }
 }
-
+void buyIA(Fort *pFort, Battlefield& battlefield) {
+    int FortPos=11;
+    std::cout << red << "Equipe Rouge IA"<<std::endl;
+    if(battlefield.checkCase(FortPos)) {
+        if(battlefield.checkCase(FortPos) && pFort->getGold() >= 22) {//vérification du compte bancaire
+            battlefield.addUnit(new Catapulte(FortPos, 12, 22, 6, 2, 4, &battlefield, false),
+                                FortPos);//génération sur terrain
+            std::cout << "Ajout d'un Catapulte pour l'IA" << std::endl;
+            pFort->setGold(pFort->getGold() - 22);//retrait bancaire
+        }
+        else if (pFort->getGold() >= 12) {//vérification du compte bancaire
+            battlefield.addUnit(new Archer(FortPos,7,12,3,1,3,&battlefield,false),FortPos);//génération sur terrain
+            std::cout <<"Ajout d'un Archer pour l'IA"<< std::endl;
+            pFort->setGold(pFort->getGold()-12);//retrait bancaire
+        }
+        else if (pFort->getGold() >= 10) {//vérification du compte bancaire
+            battlefield.addUnit(new Fantassin(FortPos, 10, 10, 4, 1, 1, &battlefield, false),
+                                FortPos);//génération sur terrain
+            std::cout << "Ajout d'un Fantassin pour l'IA" << std::endl;
+            pFort->setGold(pFort->getGold() - 10);//retrait bancaire
+        }
+        else{
+            std::cout << "IA ne fait rien" << std::endl;
+        }
+    }
+}

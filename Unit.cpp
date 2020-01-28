@@ -98,7 +98,6 @@ void Unit::doDmg(Unit *u, int i) {
     std::string g;
     if(team){std::cout<< blue <<this->getNom()<<" a attaque "<<u->getNom()<<" et a inflige"<<i<<" points de degats"<< std::endl;}
     else{std::cout<< red <<this->getNom()<<" a attaque "<<u->getNom()<<" et a inflige"<<i<<" points de degats"<< std::endl;}
-    std::cout<<g<<this->getNom()<<" a attaque "<<u->getNom()<<" et a inflige"<<i<<" points de degats"<< std::endl;
     u->takeDmg(i); //inflige les dégats
     act=true;//a effectué l'action
     if (u->isDead()){//vérifie si unité meurt
