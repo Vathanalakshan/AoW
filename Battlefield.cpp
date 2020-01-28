@@ -93,10 +93,10 @@ void Battlefield::sauvegarder(int k) {
 
     for (int i = 0; i < 12; ++i) {
         if(caseElements[i].isEdgeCase()){
-            Sortie << "Case :"<< i<< "Fort " << caseElements[i].getF()->getNom() << caseElements[i].getF()->isTeam() << caseElements[i].getF()->getHp() << std::endl;
+            Sortie << "Case :"<< i<< "  Fort :" << caseElements[i].getF()->getNom() <<" Equipe :"<< caseElements[i].getF()->isTeam()<< "  Hp :" << caseElements[i].getF()->getHp()<< "  Gold :" << caseElements[i].getF()->getGold()  << std::endl;
         }
         if(!caseElements[i].checkFree())
-            Sortie << "Case :"<< i<<  "Unité " << caseElements[i].getE()->getNom() << caseElements[i].getE()->isTeam() << caseElements[i].getE()->getHp() << std::endl;
+            Sortie << "Case :"<< i<<"  Unité :" << caseElements[i].getE()->getNom() <<" Equipe :"<< caseElements[i].getE()->isTeam()<< "  Hp :" << caseElements[i].getE()->getHp()<< "  Pos :" << caseElements[i].getE()->getHp() << std::endl;
     }
 
     std::ofstream write;
