@@ -7,7 +7,7 @@
 Catapulte::Catapulte(int p,int hp, int price, int attackDmg, int rangeMin, int rangeMax, Battlefield *plateau, bool t)
         : Unit(p,hp, price, attackDmg, rangeMin, rangeMax, plateau, t) {
     id++;
-    nom = " Cata-" + std::to_string(id);
+    nom = "Cata-" + std::to_string(id);
 }
 
 
@@ -17,10 +17,15 @@ void Catapulte::action1(){//attaque de zone selon portée
             if (isTeam()) {
 
                 attack(pos + i);
-                attack(pos+i+1);
+                if(act) {
+                    attack(pos + i + 1);
+
+                }
             } else {
                 attack(pos - i);
-                attack(pos - i-1);
+                if(act) {
+                    attack(pos - i - 1);
+                }
             }
         }
     }
@@ -30,7 +35,9 @@ void Catapulte::action1(){//attaque de zone selon portée
 
                 Case c = plateau->getCase(pos + rangeMax - 1);
                 if(c.getE()!=nullptr) {
-                    doDmg(c.getE(), attackDmg);
+                    if (act) {
+                        doDmg(c.getE(), attackDmg);
+                    }
                 }
 
         }
