@@ -22,7 +22,6 @@ int main() {
     Fort *f1= new Fort(&b, true);//EQUIPE BLEU
     Fort *f2= new Fort(&b, false);//EQUIPE RED
     b.Generer(f1,f2);//générer les forts dans plateau
-    bool run=true;//Stopper le programme
     int pvp;
     bool IA;
     std::cout << "Type 0 for PVP or 1 for PVE" << std::endl;
@@ -36,7 +35,7 @@ int main() {
         std::cout<<"PVE MODE" << std::endl;
     }
     int compteur = 0;
-    while(run) //boucle pour chaque tour
+    while(true) //boucle pour chaque tour
     {
         std::cout<< white<< "Round numero " << compteur << std::endl;
         std::cout<< "Les deux equipes recoit 8 golds."  << std::endl;
@@ -74,19 +73,16 @@ int main() {
         b.sauvegarder(compteur);
         if(f1->getHp() <= 0){//vérification mort fort1
             std::cout<<green<< "Equipe Rouge Gagne"<<white <<std::endl;
-            run=false;
             std::cout << "---------------------------------------------------------------------------------------------------"<<std::endl;
             break;
         }
         if(f2->getHp() <= 0){//vérification mort fort2
             std::cout<<green<< "Equipe Bleu Gagne"<<white<< std::endl;
-            run=false;
             std::cout << "---------------------------------------------------------------------------------------------------"<<std::endl;
             break;
         }
-        if(compteur>30){//limite de nombre de tour
+        if(compteur>300){//limite de nombre de tour
             std::cout<<green<< "Tour max atteint"<<white<< std::endl;
-            run=false;
             std::cout << "---------------------------------------------------------------------------------------------------"<<std::endl;
             break;
         }
