@@ -61,8 +61,10 @@ void Fantassin::action3(){//action 3, attaque si pas déjà fait, ou si supersol
 }
 
 void Fantassin::promote() {//promotion en supersoldat après kill d'une unité
-    superSoldat=true;
-    nom="S"+nom;
+    if(superSoldat==false) {
+        nom = "S" + nom;
+        superSoldat=true;
+    }
 
 }
 
